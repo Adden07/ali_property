@@ -25,18 +25,19 @@ class HomeController extends Controller
     public function index(){
         $data = array(
             'title' => 'Home',
-            'services'          => SoftwareService::whereStatus(1)->get(),
-            'packages'          => PackageType::withCount(['vendorPackage'])->whereStatus(1)->get(),
-            'vendor_packages'   => VendorPackage::with(['adminReviews', 'bookings'])
-                                                ->withCount(['bookings', 'adminReviews AS admin_reviews_count'])
-                                                ->whereStatus('active')
-                                                ->where('is_featured', 1)
-                                                ->orWhere('is_best_seller', 1)
-                                                ->orWhere('is_newest', 1)
-                                                ->get(),
-            'offers'            =>  Offer::where('status', 1)->latest()->get(),
+            // 'services'          => SoftwareService::whereStatus(1)->get(),
+            // 'packages'          => PackageType::withCount(['vendorPackage'])->whereStatus(1)->get(),
+            // 'vendor_packages'   => VendorPackage::with(['adminReviews', 'bookings'])
+            //                                     ->withCount(['bookings', 'adminReviews AS admin_reviews_count'])
+            //                                     ->whereStatus('active')
+            //                                     ->where('is_featured', 1)
+            //                                     ->orWhere('is_best_seller', 1)
+            //                                     ->orWhere('is_newest', 1)
+            //                                     ->get(),
+            // 'offers'            =>  Offer::where('status', 1)->latest()->get(),
+            'faqs'    => Faq::latest()->get(),  
         );
-
+        
         return view('front.index')->with($data);
     }
 
