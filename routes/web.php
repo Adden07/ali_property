@@ -189,6 +189,7 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::get('/privacy-policy', 'privacyPolicy')->name('privacy_policy');
         Route::get('/terms-of-use', 'termOfUse')->name('term_of_use');
         Route::get('/support', 'support')->name('support');
+        Route::get('/vendor-signup', 'vendorSignupForm')->name('vendor_signup_form');
     });
 });
 

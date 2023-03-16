@@ -232,4 +232,12 @@ class HomeController extends Controller
         );
         return view('front.support')->with($data);
     }
+
+    //show vendor signup form
+    public function vendorSignupForm(){
+        $data = array(
+            'title' => 'Vendor signup'
+        );
+        return view('front.vendor_signup');
+    }
 }
