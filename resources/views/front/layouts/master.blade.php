@@ -69,7 +69,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link" href="javascript:void(0)">CONTACT</a>
+							<a class="nav-link" href="{{ route('fronts.contact_us') }}">CONTACT</a>
 						</li>
 					</ul>
 					<div class="account d-flex ms-auto">
