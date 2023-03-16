@@ -204,12 +204,12 @@
                                 <span> Dashboards </span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('admin.package_types.index') }}">
                                 <i class="fe-airplay"></i>
                                 <span> Package Types </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>
@@ -225,7 +225,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>
                                 <span> Software Service </span>
@@ -245,7 +245,7 @@
                                 <i class="fe-airplay"></i>
                                 <span> Vendor Packages </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>
@@ -261,7 +261,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>
                                 <span> Reviews </span>
@@ -287,6 +287,12 @@
                                 <i class="fe-airplay"></i>
                                 <span> Affilaite Partnership </span>
                             </a>
+                        </li> --}}
+                        <li>
+                            <a href="{{ route('admin.affiliate_partnerships.index') }}">
+                                <i class="fe-airplay"></i>
+                                <span> Affilaite Partnership </span>
+                            </a>
                         </li>
                         <li>
                             <a href="{{ route('admin.contact_us.index') }}">
@@ -294,12 +300,12 @@
                                 <span> Contact Us </span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('admin.offers.index') }}">
                                 <i class="fe-airplay"></i>
                                 <span> Offers </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('admin.newsletters.index') }}">
                                 <i class="fe-airplay"></i>
@@ -337,7 +343,7 @@
                                 <span> Dashboards </span>
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="true">
                                 <i class="fe-pocket"></i>
                                 <span> Packages </span>
@@ -357,7 +363,7 @@
                                 <i class="fe-airplay"></i>
                                 <span> Bookings </span>
                             </a>
-                        </li>
+                        </li> --}}
                     @endif
                 </ul>
             </div>

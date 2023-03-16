@@ -14,7 +14,7 @@
                     <h1 style="font-family: sans-serif; margin-top: 20px"> Welcome! {{ $full_name }}</h1>
                 </div>
             <p style="line-height: 1.5;">
-                <strong style="margin-bottom: 10px; display: block">Verify Account: </strong> Please click on the button below to verify your account
+                <strong style="margin-bottom: 10px; display: block">Thank you for registration
                 <br>
 {{-- 
                 <div style="text-align: center">

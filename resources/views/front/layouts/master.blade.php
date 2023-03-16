@@ -154,9 +154,6 @@
 				</div>
 				<div class="col-md-3">
 					<h6>Newsletter</h6>
-
-					<form></form>
-
 					<form action="{{ route('fronts.newsletter') }}" class="mb-3 ajaxForm" method="POST">
 						@csrf
 						<input type="email" name="email" placeholder="Email Address" class="form-control">

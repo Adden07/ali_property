@@ -51,7 +51,7 @@ class UserLoginController extends Controller
         Mail::to($user->email)->send(new UserRegistrationMail('', $user->full_name));//send email verification link to user
 
         return response()->json([
-            'success'   => 'You have registered successfully verification link as been sent on given email',
+            'success'   => 'You have registered successfully',
             'redirect'  => route('users.login_form')
         ]);
     }
