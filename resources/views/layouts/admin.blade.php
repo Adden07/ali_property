@@ -336,6 +336,12 @@
                                 <span> Term of use </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.agent_requests.index') }}">
+                                <i class="fe-airplay"></i>
+                                <span> Agent Requests </span>
+                            </a>
+                        </li>
                     @elseif(auth('vendor')->check())
                         <li>
                             <a href="{{ route('vendors.home') }}">

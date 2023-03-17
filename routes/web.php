@@ -129,6 +129,12 @@ Route::prefix('web_admin')->namespace('Administrator')->middleware('auth:admin')
         Route::get('/', 'index')->name('index');
         Route::get('/update-status/{id}/{status}', 'updateStatus')->name('update_status');
     });
+    //agent request routes
+    Route::controller(AgentRequestController::class)->prefix('agent-requests')->name('agent_requests.')->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::get('show-message/{id}', 'showMessage')->name('show_message');
+        Route::get('/delete/{id}', 'delete')->name('delete');
+    });
     //site setting routes
     Route::get('/site-settings', 'SettingController@siteSettingsForm')->name('site_settings_form');
     Route::post('/site-settings', 'SettingController@siteSetting')->name('site_setting');
