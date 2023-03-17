@@ -19,20 +19,20 @@ use Illuminate\Support\Facades\DB;
 class HomeController extends AdminController
 {
     public function index()
-    {   
+    {  
         $data = array(
             "title" => "Dashboad",
             'vendors_count'             => Vendor::count(),
-            'software_services_count'   => SoftwareService::count(),
-            'vendor_packages_count'     => VendorPackage::when(auth('vendor'), function($query){
-                                                    $query->where('vendor_id', auth('vendor')->id());
-                                                })->count(),
+            // 'software_services_count'   => SoftwareService::count(),
+            // 'vendor_packages_count'     => VendorPackage::when(auth('vendor'), function($query){
+            //                                         $query->where('vendor_id', auth('vendor')->id());
+            //                                     })->count(),
             'faqs_count'                => Faq::count(),
-            'reviews_count'             => AdminReview::count(),
-            'booking_count'             => TravelTourBooking::get(['id', 'status']),
+            // 'reviews_count'             => AdminReview::count(),
+            // 'booking_count'             => TravelTourBooking::get(['id', 'status']),
             'affiliate_partners_count'  => AffiliatePartnership::count(),
             'contact_us_count'          => ContactUs::count(),
-            'offers_count'              => Offer::count(),
+            // 'offers_count'              => Offer::count(),
             'newletters_count'          => Newsletter::count(),
             'users_count'               => User::count(),
         );

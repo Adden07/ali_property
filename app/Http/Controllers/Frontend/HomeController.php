@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Helpers\CommonHelpers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AffiliatePartnershipRequest;
+use App\Http\Requests\AgentRequest;
 use App\Http\Requests\ContactUsRequest;
 use App\Http\Requests\TravelTourBookingRequest;
 use App\Models\AffiliatePartnership;
+use App\Models\AgentRequest as ModelsAgentRequest;
 use App\Models\ContactUs;
 use App\Models\Faq;
 use App\Models\Newsletter;
@@ -23,6 +25,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
+        // dd('done');
         $data = array(
             'title' => 'Home',
             // 'services'          => SoftwareService::whereStatus(1)->get(),
@@ -240,5 +243,20 @@ class HomeController extends Controller
             'title' => 'Vendor signup'
         );
         return view('front.vendor_signup');
+    }
+    //store agent requset
+    public function agentRequest(AgentRequest $req){
+        $validated              = $req->validated();
+
+        $request                = new ModelsAgentRequest();
+        $request->name          = $validated['name'];
+        $request->contact_no    = $validated['contact_no'];
+        $request->message       = $validated['message'];
+        $request->save();
+
+        return response()->json([
+            'success'   => 'Requset form submitted successfully',
+            'reload'    => true
+        ]);
     }
 }

@@ -151,5 +151,4 @@ class UserLoginController extends Controller
             'reload'    => true
         ]);
     }
-    
 }

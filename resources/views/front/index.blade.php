@@ -421,17 +421,18 @@
             <div class="col-md-6 form">
                 <h5>Request a Callback</h5>
                 <p>Fill out the form below to schedule a meeting with us. Our representatives accommodate your needs</p>
-                <form>
+                <form action="{{ route('fronts.agent_request') }}" method="POST" class="ajaxForm">
+                    @csrf
                     <div class="row req-form">
                         <div class="col-md-6">
-                            <input type="text" name="" class="form-control" placeholder="Your Name">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="" class="form-control" placeholder="Contact Number">
+                            <input type="text" name="contact_no" class="form-control" placeholder="Contact Number">
                         </div>
 
                         <div class="col-md-12">
-                            <textarea rows="2" class="form-control" placeholder="Your Message"></textarea>
+                            <textarea rows="2" class="form-control" name="message" placeholder="Your Message"></textarea>
                         </div>
 
                         <div class="col-md-12">
