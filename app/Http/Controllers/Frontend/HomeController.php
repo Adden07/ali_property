@@ -35,7 +35,7 @@ class HomeController extends Controller
             //                                     ->orWhere('is_newest', 1)
             //                                     ->get(),
             // 'offers'            =>  Offer::where('status', 1)->latest()->get(),
-            'faqs'    => Faq::latest()->get(),  
+            'faqs'    => Faq::where('status', 1)->latest()->get(),  
         );
         
         return view('front.index')->with($data);
