@@ -14,13 +14,13 @@ class Vendor extends Authenticatable
     protected $table = 'vendors';
     protected $guard = 'vendor';
 
-    public function packages(){
-        return $this->hasMany(VendorPackage::class, 'vendor_id', 'id');
-    }
+    // public function packages(){
+    //     return $this->hasMany(VendorPackage::class, 'vendor_id', 'id');
+    // }
 
-    public function bookings(){
-        return $this->hasManyThrough(TravelTourBooking::class, VendorPackage::class, 'vendor_id', 'vendor_package_id', 'id');
+    // public function bookings(){
+    //     return $this->hasManyThrough(TravelTourBooking::class, VendorPackage::class, 'vendor_id', 'vendor_package_id', 'id');
 
-    }
+    // }
 
 }

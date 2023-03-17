@@ -16,6 +16,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/rateit.min.css" integrity="sha512-VtezewVucCf4f8ZUJWzF1Pa0kLqPwpbLU/+6ocHmUWaoPqAH9F8gKmPkVYzu2wGWQs6DYuPxijbBfti7B+46FA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('front_assets/css/style.css') }}">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -143,7 +145,7 @@
 				<div class="col-md-3">
 					<h6>PARTNERSHIPS</h6>
 					<ul>
-						<li><a href="javascript:void(0)">Vendor Sign Up</a></li>
+						<li><a href="{{ route('fronts.vendor_signup_form') }}">Vendor Sign Up</a></li>
 						<li><a href="javascript:void(0)">Vendor Log In</a></li>
 						<li><a href="{{ route('fronts.affiliate_partnership') }}">Affiliate Partnership</a></li>
 						<li><a href="{{ route('users.login_form') }}">User Login</a></li>
@@ -209,11 +211,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
 	<script src="{{ get_asset('admin_assets') }}/js/custom.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.5/jquery.rateit.min.js" integrity="sha512-ttBgr7TNuS+00BFNY+TkWU9chna3buySaRKoA9IMmk+ueesPbUfyEsWdn5mrXB+cG+ziRdEXMHmsJjGmzBZJYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 	<script>
 		$(window).on("load", function(){
 			page_loader('hide');
 		});
+
+		$(document).ready(function(){//set select 2
+            $('.select_2_class').select2({
+				placeholder: "Select a state",
+    			allowClear: true
+			});
+        });
 	</script>
 	@yield('script')
 </body>

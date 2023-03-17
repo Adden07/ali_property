@@ -7,10 +7,10 @@
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="">vendor</a></li>
-                    <li class="breadcrumb-item active">{{ isset($is_update) ? 'edit' : 'add'}} </li>
+                    <li class="breadcrumb-item active">All</li>
                 </ol>
             </div>
-            <h4 class="page-title">{{ isset($is_update) ? 'Edit' : 'Add'}} vendor</h4>
+            <h4 class="page-title">All vendors</h4>
         </div>
     </div>
 </div>
@@ -18,9 +18,9 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card-box">
-            <h4 class="header-title m-t-0">{{ isset($is_update) ? 'Edit' : 'Add'}} vendor</h4>
+            <h4 class="header-title m-t-0">All vendors</h4>
             <p class="text-muted font-14 m-b-20">
-                Here you can {{ isset($is_update) ? 'edit' : 'add'}} vendor.
+                Here is the list of all the vendors.
             </p>
             <table class="table dt_table table-bordered w-100 nowrap" id="laravel_datatable">
                 <thead>
@@ -31,7 +31,7 @@
                     <th>Email</th>
                     <th>Business<br /> Type</th>
                     <th>Image</th>
-                    <th>Total <br />Packages</th>
+                    {{-- <th>Total <br />Packages</th> --}}
                     <th>Status</th>
                     <th>Action</th>
                 </thead>
@@ -47,7 +47,7 @@
                             <td>
                                 <img src="{{ check_file($vendor->image) }}" alt="" width="50px" height="50px">
                             </td>
-                            <td><span class="badge bg-info">{{ $vendor->packages_count }}</span></td>
+                            {{-- <td><span class="badge bg-info">{{ $vendor->packages_count }}</span></td> --}}
                             <td>
                                 <input type="checkbox" class="js-switch-small nopopup"  data-toggle="switchery" onchange="ajaxRequest(this)" data-url="{{ route('admin.vendors.update_status', ['id'=>$vendor->hashid, 'status'=>$vendor->status]) }}" @if($vendor->status) checked @endif value="1" name="minimum_amount_btn" id="minimum_amount_btn"/>
                             </td>
