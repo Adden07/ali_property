@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- App favicon -->
-	<link href="{{ check_file($site_settings['favicon']) }}" sizes="128x128" rel="shortcut icon" />
+	<link href="{{ @check_file($site_settings['favicon']) }}" sizes="128x128" rel="shortcut icon" />
 	<link rel="stylesheet" type="text/css" href="{{ asset('front_assets/css/bootstrap.css') }}">
 	<!-- <link rel="stylesheet" href="{{ asset('front_assets/css/owl.carousel.min.css') }}"> -->
 	<link rel="stylesheet" href="{{ asset('front_assets/css/slick.css') }}" />
