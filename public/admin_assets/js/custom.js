@@ -467,3 +467,24 @@ function hiden_show_password(){//hide and show password
         $('.fa-eye').removeClass('fa-eye-slash');
     }
 }
+
+function showPreview(preivew_id) {//preview single image
+    var img_src = URL.createObjectURL(event.target.files[0]);
+    $('#' + preivew_id).attr('src', img_src).removeClass('d-none');;
+}
+
+// Multiple images preview in browser
+function multiImagePreview(input, placeToInsertImagePreview) {
+    if (input.files) {
+        var filesAmount = input.files.length;
+        for (i = 0; i < filesAmount; i++) {
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var html = '<div class="position-relative inner_box d-inline mr-2 mb-2"><button type="button" class="btn btn-danger position-absolute" onclick="deleteImage(this)" style="right: 0"><i class="fas fa-times"></i></button><img src="'+event.target.result+'" alt="" class="package_image" width="100px" height="100px"></div>';
+                // $($.parseHTML('<img onclick="deleteImage(this)" class="image_preview">')).attr('src', event.target.result).attr('width', '100px').attr('height','100px').appendTo(placeToInsertImagePreview);
+                $($.parseHTML(html)).appendTo(placeToInsertImagePreview);
+            }
+            reader.readAsDataURL(input.files[i]);
+        }
+    }
+}

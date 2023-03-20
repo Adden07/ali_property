@@ -25,7 +25,7 @@
                         <div class="text-center">
                             <h2 class="fw-bold mb-4">Sign Up</h2>
                         </div>
-                        <form action="{{ route('users.registration') }}" method="POST" class="ajaxForm">
+                        <form action="{{ route('fronts.vendor_signup') }}" method="POST" class="ajaxForm" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-4">
                                 <label for="fname" class="form-label fw-500">Full Name</label>
@@ -39,24 +39,24 @@
 
                             <div class="mb-4">
                                 <label for="contact" class="form-label fw-500">Contact No</label>
-                                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact No" value="" >
+                                <input type="text" class="form-control" id="contact" name="contact_no" placeholder="Contact No" value="" >
                             </div>
 
                             <div class="mb-4">
                                 <label for="email" class="form-label fw-500">Country</label>
-                                <select class="form-control select_2_class" name="country_id" id="country_id">
+                                <select class="form-control select_2_class" name="country" id="country_id">
                                     <option value="">Select country</option>
                                 </select>
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="form-label fw-500">State</label>
-                                <select class="form-control select_2_class" name="state_id" id="state_id">
+                                <select class="form-control select_2_class" name="state" id="state_id">
                                     <option value="">Select state</option>
                                 </select>
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="form-label fw-500">Cities</label>
-                                <select class="form-control select_2_class" multiple name="city_id" id="city_id">
+                                <select class="form-control select_2_class" multiple name="cities[]" id="city_id">
                                     <option value="">Select city</option>
                                 </select>
                             </div>
@@ -90,8 +90,9 @@
 
                             <div class="mb-4">
                                 <label for="profile_image" class="form-label fw-500">Profile Image</label>
-                                <input type="file" class="form-control" name="profile_image" id="profile_image">
+                                <input type="file" class="custom-file-input" name="image"  id="image" onchange="showPreview('preview_image')">
                             </div>
+                            <img id="preview_image" src=""  class="d-none" width="100px" height="100px"/>
 
                             <button type="submit" class="btn btn-theme w-100">Sign Up</button>
                         </form>

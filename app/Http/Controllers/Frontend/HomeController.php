@@ -20,8 +20,13 @@ use App\Models\PackageType;
 use App\Models\Setting;
 use App\Models\SoftwareService;
 use App\Models\TravelTourBooking;
+use App\Models\Vendor;
+use App\Models\VendorCity;
 use App\Models\VendorPackage;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -247,7 +252,47 @@ class HomeController extends Controller
     }
     //vendor singup
     public function vendorSignup(VendorRequest $req){
+        $validated          = $req->validated();
+        $cities_arr         = (array) array();
+        $msg                = null;
 
+        $vendor             = new Vendor();
+        $vendor->full_name  = (string) $validated['full_name'];
+        $vendor->contact_no = (string) $validated['contact_no'];
+        $vendor->email      = (string) $validated['email'];
+        $vendor->password   = (string) Hash::make($validated['password']);//has the password
+        $vendor->country    = (string) $validated['country'];
+        $vendor->state      = (string) $validated['state'];
+
+        if(!empty($validated['image'])){//store vendor profile image
+            $vendor->image = CommonHelpers::uploadSingleFile($validated['image'], 'front_uploads/vendor_profiles/', 'png,jpg,jpeg', '1080');
+        }
+
+        try{//try and catch block if some errors occcured while inserting it will rollback the records
+            DB::transaction(function() use ($vendor, $cities_arr, $validated, &$msg){
+                $vendor->save();//save vendor record
+                
+                $cities_arr = collect($validated['cities'])->map(function(string $city) use ($vendor){//create the city arr
+                    return array('vendor_id'=> $vendor->id, 'city'=>$city);
+                });
+                
+                VendorCity::insert($cities_arr->toArray());//insert record in vendor
+                
+                $msg = [//success message array
+                    'success'   => 'Thank you for registration',
+                    'reload'    => true,
+                ];
+
+            });
+        }catch(Exception $e){//catch the excetpion
+            @unlink(public_path($vendor->image));//delete the image
+            $msg = [//error message array
+                'error'   => 'Some errors occured please try again',
+            ];
+        }
+
+        return response()->json($msg);//response
+        
     }
     //store agent requset
     public function agentRequest(AgentRequest $req){

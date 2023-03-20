@@ -48,7 +48,7 @@ function getStates(auth_token, state_id, country_name){//get states lists
             data.forEach(element=>{
                 states += '<option value="'+element.state_name+'">'+element.state_name+'</option>';
             });
-            ('#'+state_id).html(states);
+            $('#'+state_id).html(states);
             // (states != null) ? $ : '';//if not equal to null then append the html in given id
         },
         headers:{
