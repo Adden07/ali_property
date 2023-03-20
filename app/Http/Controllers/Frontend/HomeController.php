@@ -8,6 +8,7 @@ use App\Http\Requests\AffiliatePartnershipRequest;
 use App\Http\Requests\AgentRequest;
 use App\Http\Requests\ContactUsRequest;
 use App\Http\Requests\TravelTourBookingRequest;
+use App\Http\Requests\VendorRequest;
 use App\Models\AffiliatePartnership;
 use App\Models\AgentRequest as ModelsAgentRequest;
 use App\Models\ContactUs;
@@ -243,6 +244,10 @@ class HomeController extends Controller
             'title' => 'Vendor signup'
         );
         return view('front.vendor_signup');
+    }
+    //vendor singup
+    public function vendorSignup(VendorRequest $req){
+
     }
     //store agent requset
     public function agentRequest(AgentRequest $req){

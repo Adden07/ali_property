@@ -25,12 +25,16 @@ class VendorRequest extends FormRequest
     public function rules()
     {   
         return [
-            'company_name'          => ['required', 'string', 'max:100'],
-            'contact_person_name'   => ['required', 'string', 'max:50'],
+            // 'company_name'          => ['required', 'string', 'max:100'],
+            // 'contact_person_name'   => ['required', 'string', 'max:50'],
+            'full_name'             => ['required', 'string', 'max:50'],
             'contact_no'            => ['required', 'string', 'max:30'],
             'email'                 => ['required', 'email', Rule::unique('vendors')->ignore(@hashids_decode(@$this->all()['vendor_id']))],
             'password'              => ['nullable', 'min:8', 'max:100', Rule::requiredIf(empty($this->all()['vendor_id'])), 'confirmed'],
-            'business_type'         => ['required', 'string', 'max:30'],
+            // 'business_type'         => ['required', 'string', 'max:30'],
+            'country'               => ['required', 'string', 'max:50'],
+            'state'                 => ['required', 'string', 'max:50'],
+            'cities.*'              => ['required', 'string', 'max:50'],
             'image'                 => ['nullable', 'max:1080', 'mimes:jpg,png,jpeg', Rule::requiredIf(empty($this->all()['vendor_id']))],
             'vendor_id'             => ['nullable', 'string', 'max:100']
         ];

@@ -455,4 +455,15 @@ function formatMoney(number, decPlaces, decSep, thouSep) {
         i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +
         (decPlaces ? decSep + Math.abs(number - i).toFixed(decPlaces).slice(2) : "");
 }
-    
+
+function hiden_show_password(){//hide and show password
+    if($(".fa-eye").length > 0){
+        $('.password').attr('type', 'text');
+        $('.fa-eye').addClass('fa-eye-slash');
+        $('.fa-eye-slash').removeClass('fa-eye');
+    }else{
+        $('.password').attr('type', 'password');
+        $('.fa-eye-slash').addClass('fa-eye');
+        $('.fa-eye').removeClass('fa-eye-slash');
+    }
+}

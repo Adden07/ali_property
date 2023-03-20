@@ -18,7 +18,7 @@ function get_token(){//get the auth token
 }
 
 function getCountries(auth_token, country_id){//get countries list
-    var countries = null;
+    var countries = '<option></option>';
     $.ajax({
         type : 'GET',
         url : "https://www.universal-tutorial.com/api/countries/",
@@ -26,7 +26,8 @@ function getCountries(auth_token, country_id){//get countries list
             data.forEach(element=>{
                 countries += '<option value="'+element.country_name+'">'+element.country_name+'</option>';
             });
-            (countries != null) ? $('#'+country_id).html(countries) : '';//if not equal to null then append the html in given id
+            $('#'+country_id).html(countries);
+            // (countries != null) ? $('#'+country_id).html(countries) : '';//if not equal to null then append the html in given id
         },
         headers:{
             "Authorization": "Bearer "+auth_token,
@@ -39,7 +40,7 @@ function getCountries(auth_token, country_id){//get countries list
 
 
 function getStates(auth_token, state_id, country_name){//get states lists
-    var states = null;
+    var states = '<option></option>';
     $.ajax({
         type : 'GET',
         url : "https://www.universal-tutorial.com/api/states/"+country_name,
@@ -47,7 +48,8 @@ function getStates(auth_token, state_id, country_name){//get states lists
             data.forEach(element=>{
                 states += '<option value="'+element.state_name+'">'+element.state_name+'</option>';
             });
-            (states != null) ? $('#'+state_id).html(states) : '';//if not equal to null then append the html in given id
+            ('#'+state_id).html(states);
+            // (states != null) ? $ : '';//if not equal to null then append the html in given id
         },
         headers:{
             "Authorization": "Bearer "+auth_token,
@@ -57,7 +59,7 @@ function getStates(auth_token, state_id, country_name){//get states lists
 }
 
 function getCities(auth_token, city_id, state_name){//get citites\
-    var cities = null;
+    var cities = '<option></option>';
     $.ajax({
         type : 'GET',
         url : "https://www.universal-tutorial.com/api/cities/"+state_name,
@@ -66,7 +68,8 @@ function getCities(auth_token, city_id, state_name){//get citites\
             data.forEach(element=>{
                 cities += '<option value="'+element.city_name+'">'+element.city_name+'</option>';
             });
-            (cities != null) ? $('#'+city_id).html(cities) : '';//if not equal to null then append the html in given id
+            $('#'+city_id).html(cities);
+            // (cities != null) ? $('#'+city_id).html(cities) : '';//if not equal to null then append the html in given id
         },
         headers:{
             "Authorization": "Bearer "+auth_token,

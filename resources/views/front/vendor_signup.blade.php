@@ -41,7 +41,7 @@
                             </div>
                             <div class="mb-4">
                                 <label for="email" class="form-label fw-500">Cities</label>
-                                <select class="form-control select_2_class" multiple="multiple" name="city_id" id="city_id">
+                                <select class="form-control select_2_class" multiple name="city_id" id="city_id">
                                     <option value="">Select city</option>
                                 </select>
                             </div>
@@ -78,11 +78,11 @@
         var auth_token = get_token();//get auth token
         getCountries(auth_token, 'country_id');//get countries
 
-        $('#country_id').change(function(){
+        $('#country_id').change(function(){//when there is change the get the states of selected country
             getStates(auth_token,'state_id', $(this).val());
         });
 
-        $('#state_id').change(function(){
+        $('#state_id').change(function(){//when there is change in state then get the cities of selected state
             getCities(auth_token, 'city_id', $(this).val());
         });
     });
