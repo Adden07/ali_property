@@ -12,7 +12,7 @@ class HomeController extends Controller
     {   
         $data = array(
             "title"             => "Dashboad",
-            'bookings_count'    => Vendor::with(['bookings'])->where('id', auth('vendor')->id())->first()
+            'bookings_count'    => Vendor::where('id', auth('vendor')->id())->first()
         );
         return view('admin.home')->with($data);
     }

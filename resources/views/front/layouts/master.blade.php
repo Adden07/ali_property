@@ -146,7 +146,7 @@
 					<h6>PARTNERSHIPS</h6>
 					<ul>
 						<li><a href="{{ route('fronts.vendor_signup_form') }}">Vendor Sign Up</a></li>
-						<li><a href="javascript:void(0)">Vendor Log In</a></li>
+						<li><a href="{{ route('vendors.login') }}">Vendor Log In</a></li>
 						<li><a href="{{ route('fronts.affiliate_partnership') }}">Affiliate Partnership</a></li>
 						<li><a href="{{ route('users.login_form') }}">User Login</a></li>
 						<li><a href="{{ route('users.registration_form') }}">User Sign Up</a></li>

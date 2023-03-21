@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- App favicon -->
-    <link href="{{ check_file($site_settings['favicon']) }}" sizes="128x128" rel="shortcut icon" />
+    <link href="{{ @check_file($site_settings['favicon']) }}" sizes="128x128" rel="shortcut icon" />
     <!-- App css -->
     <link href="{{ get_asset('admin_assets') }}/css/bundled.min.css" rel="stylesheet" type="text/css" />
     <style>
