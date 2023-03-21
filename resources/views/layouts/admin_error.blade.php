@@ -98,13 +98,13 @@
                 <div class="auth-logo">
                     {{-- <a href="{{route('admin.home')}}" class="logo logo-dark text-center"> --}}
                         <span class="logo-lg">
-                            <img src="{{ check_file($site_settings['footer_logo']) }}" alt="Logo" width="200">
+                            <img src="{{ @check_file($site_settings['footer_logo']) }}" alt="Logo" width="200">
                         </span>
                     </a>
 
                     {{-- <a href="{{route('admin.home')}}" class="logo logo-light text-center"> --}}
                         <span class="logo-lg">
-                            <img src="{{ check_file($site_settings['footer_logo']) }}" alt="Logo" width="200">
+                            <img src="{{ @check_file($site_settings['footer_logo']) }}" alt="Logo" width="200">
                         </span>
                     </a>
                 </div>
