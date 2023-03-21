@@ -3,8 +3,8 @@
 @section('content')
 
 <style>
-    .bg-soft-primary{background-color: rgb(89 2 89 / 15%);}
-    .text-primary{color: #590259 !important;}
+    .bg-soft-primary{background-color: rgb(33 126 235 / 25%)!important;}
+    .text-primary{color: #217EEB !important;}
 </style>
 
 <!-- start page title -->

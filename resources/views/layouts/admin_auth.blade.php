@@ -28,7 +28,7 @@
 
                             <div class="text-center w-75 m-auto">
                                 <a href="#">
-                                    <span><img src="{{ asset('front_assets/imgs/ftr_logo.png') }}" alt="" width="200"></span>
+                                    <span><img src="{{ asset('front_assets/imgs/logo.png') }}" alt="" width="200"></span>
                                 </a>
                                 <p class="text-muted mb-4 mt-3">@yield('page-heading')</p>
                             </div>
