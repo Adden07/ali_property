@@ -204,13 +204,19 @@
                                 <span> Dashboards </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.vendors.index') }}">
+                                <i class="fe-airplay"></i>
+                                <span> Vendors </span>
+                            </a>
+                        </li>
                         {{-- <li>
                             <a href="{{ route('admin.package_types.index') }}">
                                 <i class="fe-airplay"></i>
                                 <span> Package Types </span>
                             </a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>
                                 <span> Vendor </span>
@@ -224,7 +230,7 @@
                                     <a href="{{ route('admin.vendors.index') }}">All</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="false">
                                 <i class="fe-pocket"></i>

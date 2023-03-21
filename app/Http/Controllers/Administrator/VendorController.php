@@ -16,7 +16,7 @@ class VendorController extends Controller
     public function index(){
         $data = array(
             'title' => 'All vendors',
-            'vendors'   => Vendor::latest()->get(),
+            'vendors'   => Vendor::with(['cities'])->latest()->get(),
         );
         return view('admin.vendor.index')->with($data);
     }

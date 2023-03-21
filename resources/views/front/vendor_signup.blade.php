@@ -78,7 +78,7 @@
                                             <label for="cpass" class="form-label fw-500">Confirm Password</label>
 
                                             <div class="input-group mb-3">
-                                                <input type="password" class="form-control" id="cpass" name="password_confirmation" placeholder="Confirm Password" >
+                                                <input type="password" class="form-control password" id="cpass" name="password_confirmation" placeholder="Confirm Password" >
                                                 <button type="button" class="input-group-text btn-theme" id="basic-addon2" onclick="hiden_show_password()">
                                                     <i class="fas fa-eye"></i>
                                                 </button>
