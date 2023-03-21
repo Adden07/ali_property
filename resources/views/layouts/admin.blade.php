@@ -355,6 +355,21 @@
                                 <span> Dashboards </span>
                             </a>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="false">
+                                <i class="fe-pocket"></i>
+                                <span> Property </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level collapse" aria-expanded="false" style="">
+                                <li>
+                                    <a href="{{ route('vendors.properties.add') }}">Add</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.faqs.index') }}">All</a>
+                                </li>
+                            </ul>
+                        </li>
                         {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="true">
                                 <i class="fe-pocket"></i>

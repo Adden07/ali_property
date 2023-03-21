@@ -155,25 +155,30 @@ Route::prefix('vendors')->namespace('Auth')->group(function () {
 Route::prefix('vendors')->namespace('Vendor')->name('vendors.')->middleware('auth:vendor')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     //packages routes
-    Route::controller(PackageController::class)->prefix('packages')->name('packages.')->group(function(){
-        Route::get('/', 'index')->name('index');
-        Route::get('/add', 'add')->name('add');
-        Route::post('/store', 'store')->name('store');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::get('/delete/{id}', 'delete')->name('delete');
-        Route::get('/update-status/{id}/{status}', 'updateStatus')->name('update_status');
-        Route::get('show-description/{id}', 'showDescription')->name('show_description');
-        Route::get('/delete-image/{id}', 'deletePackageImage')->name('delete_image');
-    });
+    // Route::controller(PackageController::class)->prefix('packages')->name('packages.')->group(function(){
+    //     Route::get('/', 'index')->name('index');
+    //     Route::get('/add', 'add')->name('add');
+    //     Route::post('/store', 'store')->name('store');
+    //     Route::get('/edit/{id}', 'edit')->name('edit');
+    //     Route::get('/delete/{id}', 'delete')->name('delete');
+    //     Route::get('/update-status/{id}/{status}', 'updateStatus')->name('update_status');
+    //     Route::get('show-description/{id}', 'showDescription')->name('show_description');
+    //     Route::get('/delete-image/{id}', 'deletePackageImage')->name('delete_image');
+    // });
     //booking routes
-    Route::controller(TravelTourBookingController::class)->prefix('travel-tours-bookings')->name('tour_bookings.')->group(function(){
-        Route::get('/', 'index')->name('index');
-        Route::get('/detail/{id}', 'bookingDetails')->name('details');
-    });
+    // Route::controller(TravelTourBookingController::class)->prefix('travel-tours-bookings')->name('tour_bookings.')->group(function(){
+    //     Route::get('/', 'index')->name('index');
+    //     Route::get('/detail/{id}', 'bookingDetails')->name('details');
+    // });
     //profile controller
     Route::controller(ProfileController::class)->prefix('profile')->name('profiles.')->group(function(){
         Route::get('/', 'index')->name('index');
         Route::post('/update-profile', 'updateProfile')->name('update');
+    });
+    //property routes
+    Route::controller(PropertyController::class)->prefix('property')->name('properties.')->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::get('/add', 'add')->name('add');
     });
 });
 Route::get('/errors/{method}', 'ErrorController@index');
