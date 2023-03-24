@@ -17,14 +17,16 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <div class="card-box">
-            <h4 class="header-title m-t-0">{{ isset($is_update) ? 'Edit' : 'Add'}} Property</h4>
-            <p class="text-muted font-14 m-b-20">
-                Here you can {{ isset($is_update) ? 'edit' : 'add'}} Property.
-            </p>
+        <form action="{{ route('admin.faqs.store') }}" class="ajaxForm" method="post" enctype="multipart/form-data" novalidate id="form">
+            @csrf
+            <div class="card-box">
+                <!-- <h4 class="header-title m-t-0">{{ isset($is_update) ? 'Edit' : 'Add'}} Property</h4>
+                <p class="text-muted font-14 m-b-20">
+                    Here you can {{ isset($is_update) ? 'edit' : 'add'}} Property.
+                </p> -->
 
-            <form action="{{ route('admin.faqs.store') }}" class="ajaxForm" method="post" enctype="multipart/form-data" novalidate id="form">
-                @csrf
+                <h4 class="header-title m-t-0">Location and Purpose</h4>
+                <hr>
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label for="">Purpose</label>
@@ -54,15 +56,20 @@
                         </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="card-box">
+                <h4 class="header-title m-t-0">Price and Area</h4>
+                <hr>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md">
                         <div class="row">
                             <div class="col-md-8">
                                 <label for="">Area size</label>
                                 <input type="number" class="form-control" name="area_size" id="area_size">
                             </div>
                             <div class="col-md-4">
-                                <label for=""></label>
+                                <label for="">&nbsp;&nbsp;&nbsp;</label>
                                 <select class="form-control" name="area_suze_unit" id="area_size_unit">
                                     <option value="sq/ft">Sq/ft</option>
                                     <option value="sq/yds">Sq/Yds</option>
@@ -70,10 +77,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md">
                         <label for="">Price</label>
                         <input type="number" class="form-control" name="price" id="price">
                     </div>
+                </div>
+            </div>
+
+
+            <div class="card-box">
+                <h4 class="header-title m-t-0">Feature and Amenities</h4>
+                <hr>
+                <div class="row">
                     <div class="form-group col-md-4">
                         <label for="">Bedrooms</label>
                         <select class="form-control" name="bedrooms" id="bedrooms">
@@ -91,8 +106,7 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-                </div>
-                <div class="row">
+
                     <div class="form-group col-md-4">
                         <label for="">Batrooms</label>
                         <select class="form-control" name="bathrooms" id="bathrooms">
@@ -110,12 +124,19 @@
                             <option value="10">10</option>
                         </select>
                     </div>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <h4 class="header-title m-t-0">Ad Information</h4>
+                <hr>
+                <div class="row">
                     <div class="col-md-4">
                         <label for="">Title</label>
                         <input type="text" class="form-control" name="title" id="title">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-4 mb-3">
                     <div class="col-md-12">
                         <label for="">Long Description</label>
                         <textarea name="answer" id="ck" cols="30" rows="10">
@@ -123,8 +144,10 @@
                         </textarea>
                     </div>
                 </div>
-                <input type="hidden" name="faq_id" value="{{ @$edit_faq->hashid }}">
-                <input type="submit" class="btn btn-primary float-right" value="{{ isset($is_update) ? 'Update':'Add' }}">
+                <div class="text-right">
+                    <input type="hidden" name="faq_id" value="{{ @$edit_faq->hashid }}">
+                    <input type="submit" class="btn btn-primary" value="{{ isset($is_update) ? 'Update':'Add' }}">
+                </div>
             </form>
         </div>
     </div>
