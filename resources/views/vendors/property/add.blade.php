@@ -1,6 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
+
+<style>
+    .package_image {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+    }
+</style>
+
 <div class="row">
     <div class="col-12">
         <div class="page-title-box">

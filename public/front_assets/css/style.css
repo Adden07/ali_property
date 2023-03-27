@@ -334,6 +334,8 @@ form.search-property div, form.search-agent div {
 .inspire_sliderinner{margin-right: 20px;}
 .inspire_sliderinner img{border-radius: 20px;}
 
+.property-sale .properties img{max-height: 257px; object-fit: cover;}
+
 .thumbnail {
     list-style: none;
     padding: 0;
