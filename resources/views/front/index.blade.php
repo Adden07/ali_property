@@ -134,50 +134,15 @@
         </div>
 
         <div class="properties-slider">
-
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
+            @foreach($properties AS $property)
+                <div class="col-md-3 properties">
+                    <a href="javascript:void(0)" class="text-decoration-none">
+                        <img src="{{ check_file($property->image) }}" width="100%">
+                        <h5>{{ number_format($property->price, 2) }}</h5>
+                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">{{ $property->address }}</p>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -195,50 +160,15 @@
         </div>
 
         <div class="properties-slider">
-
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
-            <div class="col-md-3 properties">
-                <a href="javascript:void(0)" class="text-decoration-none">
-                    <img src="{{ asset('front_assets/imgs/sale2.png') }}" width="100%">
-                    <h5>USD $3,044,368</h5>
-                    <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Athenree, New Zealand</p>
-                </a>
-            </div>
+            @foreach($properties AS $property)
+                <div class="col-md-3 properties">
+                    <a href="javascript:void(0)" class="text-decoration-none">
+                        <img src="{{ check_file($property->image) }}" width="100%">
+                        <h5>{{ number_format($property->price, 2) }}</h5>
+                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">{{ $property->address }}</p>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

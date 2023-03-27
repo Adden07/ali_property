@@ -17,6 +17,7 @@ use App\Models\Newsletter;
 use App\Models\Offer;
 use App\Models\PackageAddOn;
 use App\Models\PackageType;
+use App\Models\Property;
 use App\Models\Setting;
 use App\Models\SoftwareService;
 use App\Models\TravelTourBooking;
@@ -44,7 +45,8 @@ class HomeController extends Controller
             //                                     ->orWhere('is_newest', 1)
             //                                     ->get(),
             // 'offers'            =>  Offer::where('status', 1)->latest()->get(),
-            'faqs'    => Faq::where('status', 1)->latest()->get(),  
+            'faqs'          => Faq::where('status', 1)->latest()->get(),
+            'properties'    => Property::latest()->get(),  
         );
         
         return view('front.index')->with($data);
