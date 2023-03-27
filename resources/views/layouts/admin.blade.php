@@ -366,7 +366,7 @@
                                     <a href="{{ route('vendors.properties.add') }}">Add</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.faqs.index') }}">All</a>
+                                    <a href="{{ route('vendors.properties.index') }}">All</a>
                                 </li>
                             </ul>
                         </li>

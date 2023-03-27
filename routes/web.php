@@ -179,6 +179,9 @@ Route::prefix('vendors')->namespace('Vendor')->name('vendors.')->middleware('aut
     Route::controller(PropertyController::class)->prefix('property')->name('properties.')->group(function(){
         Route::get('/', 'index')->name('index');
         Route::get('/add', 'add')->name('add');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::get('/delete/{id}', 'delete')->name('delete');
     });
 });
 Route::get('/errors/{method}', 'ErrorController@index');
