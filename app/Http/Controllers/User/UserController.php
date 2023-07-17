@@ -24,8 +24,10 @@ class UserController extends Controller
     public function dashboard(){
         $data = array(
             'title'             => 'Dashbaord',
-            'bookings'          => TravelTourBooking::where('user_id', auth('web')->id())->get(),
-            'wishlists'          => Wishlist::with(['package'])->where('user_id', auth('web')->id())->get(),
+            'bookings'          => [],
+            'wishlists'         => [],
+            // 'bookings'          => TravelTourBooking::where('user_id', auth('web')->id())->get(),
+            // 'wishlists'          => Wishlist::with(['package'])->where('user_id', auth('web')->id())->get(),
             'account_details'   => auth('web')->user()
         );
         return view('user.dashboard')->with($data);

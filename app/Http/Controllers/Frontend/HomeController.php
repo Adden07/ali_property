@@ -311,4 +311,18 @@ class HomeController extends Controller
             'reload'    => true
         ]);
     }
+
+    public function allProperties(){
+        $data = array(
+            'title' => 'All Properties'
+        );
+        return view('front.all_properties');
+    }
+
+    public function property(){
+        $data = array(
+            'title' => 'All Properties'
+        );
+        return view('front.property');
+    }
 }

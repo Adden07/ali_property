@@ -182,6 +182,8 @@ Route::prefix('vendors')->namespace('Vendor')->name('vendors.')->middleware('aut
         Route::post('/store', 'store')->name('store');
         Route::get('/edit/{id}', 'edit')->name('edit');
         Route::get('/delete/{id}', 'delete')->name('delete');
+        Route::post('/documents/{property_id}', 'getDocuments')->name('get_documents');
+
     });
 });
 Route::get('/errors/{method}', 'ErrorController@index');
@@ -206,6 +208,8 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::get('/vendor-signup', 'vendorSignupForm')->name('vendor_signup_form');
         Route::post('/vendor-signup', 'vendorSignup')->name('vendor_signup');
         Route::post('/agent-request', 'agentRequest')->name('agent_request');
+        Route::get('/properties', 'allProperties')->name('all_properties');
+        Route::get('/property', 'property')->name('property');
     });
 });
 
