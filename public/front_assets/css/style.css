@@ -115,7 +115,7 @@ form.search-property div, form.search-agent div {
 .it_solutions{background-image: url('../imgs/it-solback.jpg');}
 .travel_tourisam{background-image: url('../imgs/travel-tourism.png');}
 .nav_top{background-color: rgba(0, 0, 0, 0.9);}
-.nav_main{transition: 0.5s; background-color: #fff;}
+.nav_main{transition: 0.5s; background-color: #fff;box-shadow: 5px 2px 5px #d4d4d4;}
 .nav_main nav{padding: 20px 0px;;}
 /* .nav_main nav .navbar-brand{color: #217EEB;} */
 
@@ -916,8 +916,6 @@ border-radius: 20px;
 margin-left: 3px;}
 
 
-
-.variations{}
 .variation_container{
     display: inline-block;
     position: relative;
@@ -935,7 +933,6 @@ margin-left: 3px;}
 .checkmark{
     display: block;
     background-color: #eee;
-    padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #000;
@@ -1032,6 +1029,90 @@ margin-left: 3px;}
 
 .our-agent-single .property-desc{margin-top: 10px;margin-bottom: 20px;}
 .our-agent-single .additional_details ul{list-style: none;}
+.listing-form-section .default-form{border-radius: 5px;}
+.listing-form-section .default-form .card-body{background-color: #f7f7f7; border: 0;}
+
+.range .ui-slider-horizontal{height: 0.5em;border-radius: 0;}
+.range .ui-slider-horizontal .ui-slider-handle{top: -0.5em;border-radius: 50%;}
+.range .ui-widget-header{background-color: #217EEB;}
+.range .ui-state-default,
+.range .ui-widget-content .ui-state-default{border: 2px solid #217eeb;background: #f7f7f7;}
+.listing-form-section label{font-size: 16px;margin-bottom: 16px;}
+
+
+/* Customize the label (the container) */
+.amenities label {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+/* Hide the browser's default checkbox */
+.amenities label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+/* Create a custom checkbox */
+.amenities label .checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: #f7f7f7;
+    border-radius: 2px;
+}
+  
+/* On mouse-over, add a grey background color */
+.amenities .label:hover input ~ .checkmark{background-color: #ccc;}
+
+/* When the checkbox is checked, add a blue background */
+.amenities label input:checked ~ .checkmark{background-color: #2196F3;}
+  
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Show the checkmark when checked */
+.amenities label input:checked ~ .checkmark:after{display: block;}
+  
+/* Style the checkmark/indicator */
+.amenities label .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.listing_toparea{background-color: whitesmoke;padding: 15px 15px; border-radius: 5px;}
+
+.property_listing .properties{border: 1px solid #eee;border-radius: 5px; margin-bottom: 20px;}
+.property_listing .properties img{border-radius: 5px 5px 0px 0px;margin-bottom: 10px;}
+.property_listing .properties .properties_content{padding: 10px 15px;}
+.property_listing .properties .properties_content h5{color: #070510; margin-bottom: 0;}
+.property_listing .properties .properties_content h5.price{font-size: 18px;}
+.property_listing .properties .properties_content p{color: #a6a3ba; font-size: 15px;}
+.btm_pagination .pagination a{color: #070510;}
+.btm_pagination .pagination a.active{background-color: #217EEB; color: #fff;}
+
 
 /* Helper Classes */
 .bgc-f7{background-color: #eee;}

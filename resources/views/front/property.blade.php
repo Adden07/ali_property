@@ -11,7 +11,6 @@
                     <h2>Property Name</h2>
                     <p>Appartment, ID: 13255, Added On: 17 Jluy 2023</p>
                 </div>
-
             </div>
         </div>
        
