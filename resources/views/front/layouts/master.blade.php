@@ -33,7 +33,7 @@
 
 				<a class="navbar-brand" href="{{ route('fronts.home') }}">
 					<!-- <img src="{{ @check_file($site_settings['header_logo']) }}" alt="Rayymeem"> -->
-					<img src="https://incubatist.com/demo/alipropertyadvisor/design/images/logo.png" alt="Ali Property">
+					<img src="{{ asset('front_assets/imgs/logo.png') }}" alt="Ali Property">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -106,7 +106,7 @@
 			<div class="row footer-sections pb-5">
 				<div class="col-md-3">
 					<!-- <h2><img src="{{ @check_file($site_settings['footer_logo']) }}" alt="Rayymeem" /></h2> -->
-					<h2><img src="https://incubatist.com/demo/alipropertyadvisor/design/images/logo.png" alt="Ali Property" /></h2>
+					<h2><img src="{{ asset('front_assets/imgs/logo.png') }}" alt="Ali Property" /></h2>
 					<!-- <p>{{ @$site_settings['short_desc'] }}</p> -->
 					<p>Committed to delivering a high level of expertise, customer service, and attention to detail to the.</p>
 

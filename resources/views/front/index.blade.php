@@ -139,7 +139,7 @@
                     <a href="javascript:void(0)" class="text-decoration-none">
                         <img src="{{ check_file($property->image) }}" width="100%">
                         <h5>{{ number_format($property->price, 2) }}</h5>
-                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">{{ $property->address }}</p>
+                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
                     </a>
                 </div>
             @endforeach
@@ -165,7 +165,7 @@
                     <a href="javascript:void(0)" class="text-decoration-none">
                         <img src="{{ check_file($property->image) }}" width="100%">
                         <h5>{{ number_format($property->price, 2) }}</h5>
-                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">{{ $property->address }}</p>
+                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
                     </a>
                 </div>
             @endforeach

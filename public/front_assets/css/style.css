@@ -1023,22 +1023,22 @@ margin-left: 3px;}
     padding: 18px 0px !important;
 }
 
-/* Helper Classes */
 
+.additional_details ul li span{font-weight: bold;}
+.btm_tabs li a{padding: 13px 15px;font-weight: bold;background-color: #dddddd !important; color: #000;}
+.btm_tabs li a.active{background-color: #fff !important;}
+.our-agent-single .tab-content{border: 1px solid #d3d3d3;background-color: #fff;padding: 15px 25px;}
+.our-agent-single .tab-content a{display: inline-block;text-decoration: none;padding: 8px 18px;border-radius: 5px;background-color: #eeeeee;color: #000;}
+
+.our-agent-single .property-desc{margin-top: 10px;margin-bottom: 20px;}
+.our-agent-single .additional_details ul{list-style: none;}
+
+/* Helper Classes */
+.bgc-f7{background-color: #eee;}
 .bg-theme{background-color: #217EEB;}
 .text-theme{color: #217EEB !important;font-weight: 500;}
 
-.btn-theme {
-    background-color: #217EEB !important;
-    color: #fff !important;
-    border: 1px solid #217EEB !important;
-    font-weight: 700 !important;
-}
-
-.btn-theme:hover {
-    background-color: transparent !important;
-    color: #217EEB !important
-}
-
+.btn-theme{background-color: #217EEB !important;color: #fff !important;border: 1px solid #217EEB !important;font-weight: 700 !important;}
+.btn-theme:hover{background-color: transparent !important;color: #217EEB !important}
 .btn-white{background-color: #FFFFFF; color: #217EEB; font-weight: 700; border-radius: 5px;}
 .fw-500{font-weight: 500;}

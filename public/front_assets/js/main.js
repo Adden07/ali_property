@@ -153,6 +153,11 @@ $(function () {
         ]
     })
 
+    $('.view_propertyslide').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1
+    })
+
     $('.properties-slider').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
