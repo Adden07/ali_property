@@ -120,7 +120,7 @@
         </div>
     </div>
 </section>
-
+{{-- 
 <section class="property-sale">
     <div class="container">
 
@@ -145,7 +145,7 @@
             @endforeach
         </div>
     </div>
-</section>
+</section> --}}
 
 <section class="property-sale">
     <div class="container">
@@ -156,14 +156,14 @@
                 <p>Explore some of the most popular properties for sale around the world</p>
             </div>
 
-            <div><a href="javascript:void(0)" class="btn btn-primary">VIEW ALL</a></div>
+            <div><a href="{{ route('fronts.all_properties') }}" class="btn btn-primary">VIEW ALL</a></div>
         </div>
 
         <div class="properties-slider">
             @foreach($properties AS $property)
                 <div class="col-md-3 properties">
-                    <a href="javascript:void(0)" class="text-decoration-none">
-                        <img src="{{ check_file($property->image) }}" width="100%">
+                    <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none">
+                        <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
                         <h5>{{ number_format($property->price, 2) }}</h5>
                         <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
                     </a>

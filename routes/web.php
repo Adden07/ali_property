@@ -209,7 +209,7 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::post('/vendor-signup', 'vendorSignup')->name('vendor_signup');
         Route::post('/agent-request', 'agentRequest')->name('agent_request');
         Route::get('/properties', 'allProperties')->name('all_properties');
-        Route::get('/property', 'property')->name('property');
+        Route::get('/property/{id}', 'property')->name('property');
     });
 });
 

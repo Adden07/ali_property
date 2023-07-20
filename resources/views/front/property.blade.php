@@ -8,8 +8,8 @@
         <div class="row mb30">
             <div class="col-md-8">
                 <div class="single_property_title mt30-767">
-                    <h2>Property Name</h2>
-                    <p>Appartment, ID: 13255, Added On: 17 Jluy 2023</p>
+                    <h2>{{ $property->title }}</h2>
+                    <p>{{ $property->type }}, ID: {{ $property->property_id }}, Added On: {{ date('d-M-Y', strtotime($property->created_at)) }}</p>
                 </div>
             </div>
         </div>
@@ -19,15 +19,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="view_propertyslide">
+                            @foreach($property->images AS $image)
                             <div class="spls_style_two mb30-520">
-                                <a class="popup-img" data-lightbox="roadtrip" href="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"><img class="img-fluid w100" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="Image Name"></a>
+                                <a class="popup-img" data-lightbox="roadtrip" href="{{ asset($image->image) }}"><img class="img-fluid w100" src="{{ asset($image->image) }}" alt="Image Name"></a>
                             </div>
-                            <div class="spls_style_two mb30-520">
-                                <a class="popup-img" data-lightbox="roadtrip" href="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"><img class="img-fluid w100" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="Image Name"></a>
-                            </div>
-                            <div class="spls_style_two mb30-520">
-                                <a class="popup-img" data-lightbox="roadtrip" href="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"><img class="img-fluid w100" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" alt="Image Name"></a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -41,17 +37,17 @@
                         </div>
                         <div class="col-md-12">
                             <ul class="list-unstyled mr-0 p-0 mb-0">
-                                <li><p><span class="mr-2">Property ID : </span> (544 4654-5454)</p></li>
-                                <li><p><span class="mr-2">Price :</span> $ 950.00</p></li>
-                                <li><p><span class="mr-2">Property Size :</span> 500 Sq Ft</p></li>
-                                <li><p><span class="mr-2">Year Built :</span> 2015</p></li>
-                                <li><p><span class="mr-2">Zipcode :</span> 123</p></li>
+                                <li><p><span class="mr-2">Property ID : </span> ({{ $property->propery_id }})</p></li>
+                                <li><p><span class="mr-2">Price :</span> $ {{ number_format($property->image) }}</p></li>
+                                <li><p><span class="mr-2">Property Size :</span> {{ number_format($property->area) }} Sq Ft</p></li>
+                                <li><p><span class="mr-2">Year Built :</span> {{ date('Y', strtotime($property->year_built)) }}</p></li>
+                                <li><p><span class="mr-2">Zipcode :</span> {{ $property->zipcode }}</p></li>
 
-                                <li><p><span class="mr-2">Property Type :</span> Land</p></li>
-                                <li><p><span class="mr-2">Bedrooms :</span> 5</p></li>
-                                <li><p><span class="mr-2">Bathrooms :</span> 2</p></li>
-                                <li><p><span class="mr-2">Est Repair Cost :</span> $ 23.00</p></li>
-                                <li><p><span class="mr-2">Status :</span> Recent Added</p></li>
+                                <li><p><span class="mr-2">Property Type :</span> {{ $property->type }}</p></li>
+                                <li><p><span class="mr-2">Bedrooms :</span> {{ $property->rooms }}</p></li>
+                                <li><p><span class="mr-2">Bathrooms :</span> {{ $property->bathrooms }}</p></li>
+                                <li><p><span class="mr-2">Est Repair Cost :</span> $ {{ number_format($property->est_repair_cost) }}</p></li>
+                                <li><p><span class="mr-2">Status :</span> {{ $property->status }}</p></li>
                             </ul>
                         </div>
 
@@ -79,13 +75,13 @@
             <div class="d-flex">
                 <div class="d-flex fw-bold small">
                     <span class="mr-2">PROPERTY ID</span>
-                    <span> (901) 5454 5454</span>
+                    <span> {{ $property->property_id }}</span>
                 </div>
             </div>
             <div class="d-flex">
                 <div class="d-flex fw-bold small">
                     <span class="mr-2">EVENT ITEM</span>
-                    <span> 01, Apr 2022</span>
+                    <span> {{ date('d-M-Y', strtotime($property->created_at)) }}</span>
                 </div>
             </div>
         </div>
@@ -115,17 +111,17 @@
                         <div class="listing_single_description">
                             <div class="lsd_list">
                                 <ul class="p-0">
-                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Land</a></li>
-                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Beds: 5+</a></li>
-                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Baths: 2</a></li>
-                                    <li class="list-inline-item mb-2">Sq Ft: 26</li>
-                                    <li class="list-inline-item mb-2">Lot Size: 82</li>
-                                    <li class="list-inline-item mb-2">Status: Recent Added</li>
+                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">{{ $property->type }}</a></li>
+                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Beds: {{ $property->room }}</a></li>
+                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Baths: {{ $property->bathrooms }} </a></li>
+                                    <li class="list-inline-item mb-2">Sq Ft: {{ $property->area }}</li>
+                                    <li class="list-inline-item mb-2">Lot Size: {{ $property->lot_size }}</li>
+                                    <li class="list-inline-item mb-2">Status: {{ $property->status }}</li>
                                 </ul>
                             </div>
                             <h4>Description</h4>
                             <div class="property-desc">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia rem vel assumenda accusamus expedita quis reiciendis ex.
+                                {{ $property->description }}
                             </div>
                         </div>
                     </div>
@@ -191,27 +187,27 @@
                                     <div class="col-md-3">
                                         <p>
                                             <strong>Address: </strong> <br>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quidem veniam totam doloremque.
+                                            {{ $property->address }}
                                         </p>
                                     </div>
                                     <div class="col-md-3">
                                         <strong>State</strong> <br>
-                                        Sindh
+                                        {{ $property->address }}
                                     </div>
                                     <div class="col-md-3">
                                         <strong>City</strong> <br>
-                                        Houston
+                                        {{ $property->city }}
                                     </div>
                                     <div class="col-md-3">
                                         <strong> Zip</strong> <br>
-                                        1234
+                                        {{ $property->zipcode }}
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-12 mt-4">
                                 <strong>Description</strong> <br>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi deleniti perspiciatis quisquam repudiandae sed? Consequatur debitis harum fuga vel, nihil quos dicta nesciunt deleniti reiciendis quaerat magnam commodi est quas?
+                                {{ $property->description }}
                             </div>
                     </div>
                 </div>

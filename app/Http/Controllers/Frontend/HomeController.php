@@ -46,7 +46,7 @@ class HomeController extends Controller
             //                                     ->get(),
             // 'offers'            =>  Offer::where('status', 1)->latest()->get(),
             'faqs'          => Faq::where('status', 1)->latest()->get(),
-            'properties'    => Property::latest()->get(),  
+            'properties'    => Property::latest()->limit(10)->get(),  
         );
         
         return view('front.index')->with($data);
@@ -314,15 +314,19 @@ class HomeController extends Controller
 
     public function allProperties(){
         $data = array(
-            'title' => 'All Properties'
+            'title' => 'All Properties',
+            'properties'    => Property::with(['images'])->paginate(100),
         );
-        return view('front.all_properties');
+        return view('front.all_properties')->with($data);
     }
 
-    public function property(){
+    public function property($id){
+        // dd('done');
         $data = array(
-            'title' => 'All Properties'
+            'title' => 'All Properties',
+            'property'  => Property::with(['images'])->findOrFail(hashids_decode($id)),
         );
-        return view('front.property');
+        
+        return view('front.property')->with($data);
     }
 }
