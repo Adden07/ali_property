@@ -29,31 +29,17 @@
 	  </div>
 	<section class="nav_main fixed-top">
 		<div class="container-fluid">
-			<nav class="navbar navbar-expand-lg bg-body-tertiary">
-
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand" href="{{ route('fronts.home') }}">
 					<!-- <img src="{{ @check_file($site_settings['header_logo']) }}" alt="Rayymeem"> -->
 					<img src="{{ asset('front_assets/imgs/logo.png') }}" alt="Ali Property">
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+
+				<button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbar">
-					<!-- <ul class="navbar-nav my-2 my-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="{{ route('fronts.home') }}">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ route('fronts.travel_tourisam') }}">Travel & Tourism</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{{ route('fronts.it_solutions') }}">IT Solutions</a>
-						</li>
 
-						<li class="nav-item">
-							<a class="nav-link" href="{{ route('fronts.support') }}">Support</a>
-						</li>
-					</ul> -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link" aria-current="page" href="javascript:void(0)">BUY</a>
@@ -74,10 +60,11 @@
 							<a class="nav-link" href="{{ route('fronts.contact_us') }}">CONTACT</a>
 						</li>
 					</ul>
-					<div class="account d-flex ms-auto">
+
+					<div class="account d-flex ms-lg-auto">
 						@guest('web')
-							<a href="{{ route('users.login_form') }}" class="text-white" id="login">Login</a>
-							<a href="{{ route('users.registration_form') }}" class="text-white" id="signup">Signup</a>
+						<a href="{{ route('users.login_form') }}" id="login">Login</a>
+						<a href="{{ route('users.registration_form') }}" class="text-white" id="signup">Signup</a>
 						@endif
 						@auth('web')
 							<div class="dropdown">
@@ -93,8 +80,10 @@
 							</div>
 						@endauth
 					</div>
+					<button class="btn country-select "><img src="{{ asset('front_assets/imgs/united-states.png') }}" class="me-2">USA</button>
+
+					
 				</div>
-				<button class="btn country-select"><img src="{{ asset('front_assets/imgs/united-states.png') }}" class="me-2">USA</button>
 			</nav>
 		</div>
 	</section>
@@ -102,7 +91,7 @@
 	@yield('content')
 
 	<section class="footer">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row footer-sections pb-5">
 				<div class="col-md-3">
 					<!-- <h2><img src="{{ @check_file($site_settings['footer_logo']) }}" alt="Rayymeem" /></h2> -->
@@ -184,24 +173,26 @@
 
 		</div>
 		<div class="copyright container-fluid">
-			<div class="row">
-				<div class="col-md-6 rights">
-					<p class="text-white">&copy; <?php echo date('Y'); ?> All Right Reserved | Designed by Gexton Inc</p>
-				</div>
-				<div class="col-md-6 links">
-					<p>
-						<a href="{{ route('fronts.term_of_use') }}" class="text-white text-decoration-none">Terms Of Use</a>
-						|
-						<a href="{{ route('fronts.privacy_policy') }}" class="text-white text-decoration-none">Privacy Policy</a>
-					</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 rights">
+						<p class="text-white">&copy; <?php echo date('Y'); ?> All Right Reserved | Designed by Gexton Inc</p>
+					</div>
+					<div class="col-md-6 links text-md-end">
+						<p>
+							<a href="{{ route('fronts.term_of_use') }}" class="text-white text-decoration-none">Terms Of Use</a>
+							|
+							<a href="{{ route('fronts.privacy_policy') }}" class="text-white text-decoration-none">Privacy Policy</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<script src="{{ asset('front_assets/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('front_assets/js/popper.min.js') }}"></script>
 	<script src="{{ asset('front_assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('front_assets/js/slick.min.js') }}"></script>
-	<script src="{{ asset('front_assets/js/popper.min.js') }}"></script>
 	<!-- <script src="{{ asset('front_assets/js/owl.carousel.min.js') }}"></script> -->
 	<script src="{{ asset('front_assets/js/main.js') }}"></script>
 	
