@@ -189,6 +189,10 @@
 			</div>
 		</div>
 	</section>
+
+
+	<a href="{{ route('fronts.chat') }}" class="float_chat"><i class="fa-regular fa-comments"></i></a>
+
 	<script src="{{ asset('front_assets/js/jquery.min.js') }}"></script>
 	<script src="{{ asset('front_assets/js/popper.min.js') }}"></script>
 	<script src="{{ asset('front_assets/js/bootstrap.min.js') }}"></script>
