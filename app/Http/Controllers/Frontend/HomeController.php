@@ -330,4 +330,8 @@ class HomeController extends Controller
         
         return view('front.property')->with($data);
     }
+
+    public function chat(){
+        return view('front.chat');
+    }
 }
