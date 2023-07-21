@@ -429,10 +429,6 @@
             }
         });
         //$( "#amount" ).val( "$" + $( "#square-range" ).slider( "values", 0 ) + " - $" + $( "#square-range" ).slider( "values", 1 ) );
-
-
-
-
     });
 </script>
 @endsection
