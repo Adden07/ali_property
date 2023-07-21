@@ -18,7 +18,9 @@ class Vendor extends Authenticatable
         return $this->hasMany(VendorCity::class, 'vendor_id', 'id');
     }
 
-    // public function packages(){
+    public function properties(){
+        return $this->hasMany(Property::class, 'user_id', 'id');
+    }    // public function packages(){
     //     return $this->hasMany(VendorPackage::class, 'vendor_id', 'id');
     // }
 

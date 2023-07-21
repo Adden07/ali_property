@@ -312,7 +312,8 @@ class HomeController extends Controller
         ]);
     }
 
-    public function allProperties(){
+    public function allProperties(Request $req){
+        dd($req->all());
         $data = array(
             'title' => 'All Properties',
             'properties'    => Property::with(['images'])->paginate(100),

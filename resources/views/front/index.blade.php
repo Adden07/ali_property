@@ -20,13 +20,14 @@
             <div class="tab-pane show active" id="property" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                 <form class="search-property">
                     <div>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected="">Type of Property</option>
-                            <option value="1">Buy</option>
-                            <option value="2">Sell</option>
-                            <option value="3">Rent</option>
+                        <select class="form-select" name="type_of_property" aria-label="Default select example">
+                            <option selected>Type of Property</option>
+                            @foreach(get_property_types() as $val)
+                            <option value="{{$val}}" <?= (@$property->type == $val) ? 'selected' : '' ?>>{{$val}}</option>
+                            @endforeach
                         </select>
-                        <input type="text" name="" placeholder="Enter City or country" class="form-control">
+                        
+                        <input type="text" name="city" placeholder="Enter City or country" class="form-control">
 
                         <button class="btn" type="submit">Find</button>
                     </div>

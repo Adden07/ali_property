@@ -174,6 +174,7 @@
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
                                             <label>Rooms</label>
                                             <select class="form-control " data-live-search="true" data-width="100%" name="rooms" data-parsley-required>
+                                                <option value="1" <?= (@$property->rooms == '0') ? 'selected' : '' ?>>0</option>
                                                 <option value="1" <?= (@$property->rooms == '1') ? 'selected' : '' ?>>1</option>
                                                 <option value="2" <?= (@$property->rooms == '2') ? 'selected' : '' ?>>2</option>
                                                 <option value="3" <?= (@$property->rooms == '3') ? 'selected' : '' ?>>3</option>

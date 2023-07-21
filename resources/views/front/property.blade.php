@@ -37,10 +37,10 @@
                         </div>
                         <div class="col-md-12">
                             <ul class="list-unstyled mr-0 p-0 mb-0">
-                                <li><p><span class="mr-2">Property ID : </span> ({{ $property->propery_id }})</p></li>
-                                <li><p><span class="mr-2">Price :</span> $ {{ number_format($property->image) }}</p></li>
+                                <li><p><span class="mr-2">Property ID : </span> ({{ $property->property_id }})</p></li>
+                                <li><p><span class="mr-2">Price :</span> $ {{ number_format($property->price) }}</p></li>
                                 <li><p><span class="mr-2">Property Size :</span> {{ number_format($property->area) }} Sq Ft</p></li>
-                                <li><p><span class="mr-2">Year Built :</span> {{ date('Y', strtotime($property->year_built)) }}</p></li>
+                                <li><p><span class="mr-2">Year Built :</span> {{ $property->year_built }}</p></li>
                                 <li><p><span class="mr-2">Zipcode :</span> {{ $property->zipcode }}</p></li>
 
                                 <li><p><span class="mr-2">Property Type :</span> {{ $property->type }}</p></li>
@@ -95,14 +95,14 @@
 
         <ul class="nav nav-tabs btm_tabs" id="myTab" role="tablist">
             <li class="nav-item col-md-4 px-0 text-center">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"  data-bs-target="#home">Investment Opportunity</a>
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"  data-bs-target="#home">Overview</a>
             </li>
             <li class="nav-item col-md-4 px-2 text-center">
                 <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"  data-bs-target="#profile">Location Information</a>
             </li>
-            <li class="nav-item col-md-4 px-0 text-center">
+            {{-- <li class="nav-item col-md-4 px-0 text-center">
                 <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" onclick="data_documents()">Data Room</a>
-            </li>
+            </li> --}}
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -112,7 +112,7 @@
                             <div class="lsd_list">
                                 <ul class="p-0">
                                     <li class="list-inline-item mb-2"><a target="_blank" href="#">{{ $property->type }}</a></li>
-                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Beds: {{ $property->room }}</a></li>
+                                    <li class="list-inline-item mb-2"><a target="_blank" href="#">Bedrooms: {{ $property->rooms }}</a></li>
                                     <li class="list-inline-item mb-2"><a target="_blank" href="#">Baths: {{ $property->bathrooms }} </a></li>
                                     <li class="list-inline-item mb-2">Sq Ft: {{ $property->area }}</li>
                                     <li class="list-inline-item mb-2">Lot Size: {{ $property->lot_size }}</li>
@@ -145,12 +145,12 @@
                                             <li><p>Zipcode :</p></li>
                                         </ul>
                                         <ul class="col-md-6 col-lg-6">
-                                            <li><p>(901) 5454 5454</p></li>
-                                            <li><p>$ 959.00</p></li>
-                                            <li><p>62 Sq Ft</p></li>
-                                            <li><p>82 Acres</p></li>
-                                            <li><p>2010</p></li>
-                                            <li><p>1234</p></li>
+                                            <li><p>{{ $property->property_id }}</p></li>
+                                            <li><p>$ {{ number_format($property->price) }}</p></li>
+                                            <li><p>{{ $property->area }} Sq Ft</p></li>
+                                            <li><p>{{ $property->lot_size }}</p></li>
+                                            <li><p>{{ $property->year_built }}</p></li>
+                                            <li><p>{{ $property->zipcode }}</p></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -163,10 +163,10 @@
                                             <li><p>Est Repair Cost :</p></li>
                                         </ul>
                                         <ul class="col-md-6 col-lg-6 mr-0">
-                                            <li><p>Land</p></li>
-                                            <li><p>5+</p></li>
-                                            <li><p>2</p></li>
-                                            <li><p>$ 22.00</p></li>
+                                            <li><p>{{ $property->type }}</p></li>
+                                            <li><p>{{ $property->bathrooms }}</p></li>
+                                            <li><p>{{ $property->rooms }}</p></li>
+                                            <li><p>$ {{ number_format($property->est_repair_cost) }}</p></li>
                                         </ul>
                                     </div>
                                 </div>

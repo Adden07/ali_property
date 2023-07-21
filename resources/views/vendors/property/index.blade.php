@@ -82,7 +82,7 @@
                                 <button data-toggle="tooltip" data-placement="top" title="Documents" type="button" onclick="getPropertyDocuments('{{$property->hashid}}', '{{$property->title}}')" class="btn btn-warning btn-xs waves-effect waves-light px-0">
                                     <span class="btn-label" style="margin: 0 !important"><i class="fa fa-file"></i></span>
                                 </button>
-                                <a data-toggle="tooltip" data-placement="top" title="View" href="{{route('admin.home', $property->slug)}}" target="_blank" class="btn btn-info btn-xs waves-effect waves-light px-0">
+                                <a data-toggle="tooltip" data-placement="top" title="View" href="{{route('fronts.property', $property->hashid)}}" target="_blank" class="btn btn-info btn-xs waves-effect waves-light px-0">
                                     <span class="btn-label" style="margin: 0 !important"><i class="fa fa-eye"></i></span>
                                 </a>
                                 <a data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('vendors.properties.edit', $property->hashid) }}"    class="btn btn-success btn-xs waves-effect waves-light px-0">

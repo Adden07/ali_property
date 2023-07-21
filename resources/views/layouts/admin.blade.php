@@ -210,6 +210,13 @@
                                 <span> Vendors </span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{ route('admin.properties.index') }}">
+                                <i class="fe-airplay"></i>
+                                <span> Properties </span>
+                            </a>
+                        </li>
                         {{-- <li>
                             <a href="{{ route('admin.package_types.index') }}">
                                 <i class="fe-airplay"></i>
@@ -294,12 +301,12 @@
                                 <span> Affilaite Partnership </span>
                             </a>
                         </li> --}}
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('admin.affiliate_partnerships.index') }}">
                                 <i class="fe-airplay"></i>
                                 <span> Affilaite Partnership </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('admin.contact_us.index') }}">
                                 <i class="fe-airplay"></i>
