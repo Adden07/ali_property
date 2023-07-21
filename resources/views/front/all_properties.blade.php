@@ -224,7 +224,7 @@
                             <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none">
                                 <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
                                 <div class="properties_content">
-                                    <h5>Luxury Home</h5>
+                                    <h5>{{ $property->title }}</h5>
                                     <h5 class="mb-2 price">$ {{ number_format($property->price) }}</h5>
                                     <p>{{ $property->rooms }} Bed | {{ $property->bathrooms }} Bath | {{ $property->area }} sq ft</p>
                                 </div>
