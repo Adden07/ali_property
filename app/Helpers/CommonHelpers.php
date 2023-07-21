@@ -568,4 +568,17 @@ class CommonHelpers
         }
         return $str;
     }
+
+    public static function showDescModal($table_name, $row_id, $column, $path, $title, $render=true){
+        $data = array(
+            'data'  => \DB::table($table_name)->where('id', $row_id)->first(),
+            'column'=> $column,
+            'title' => $title,
+            'render'=> $render
+        );
+
+        return response()->json([
+            'html'  => view($path)->with($data)->render()
+        ]);
+    }
 }

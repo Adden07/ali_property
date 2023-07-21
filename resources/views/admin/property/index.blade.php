@@ -25,10 +25,10 @@
                 <div class="align-content-center">
                     <h4 class="header-title mb-0" style="line-height: 1.67">All Properties</h4>
                     <div>
-                    <a href="{{ route('vendors.properties.add') }}" class="btn btn-sm btn-primary">Add Property</a>
+                    {{-- <a href="{{ route('vendors.properties.add') }}" class="btn btn-sm btn-primary">Add Property</a> --}}
                     </div>
                 </div>
-                <form action="{{route('vendors.properties.index')}}" method="GET" class="d-flex align-items-center">
+                <form action="{{route('admin.properties.index')}}" method="GET" class="d-flex align-items-center">
                     <div class="form-group mr-2">
                         <input type="search" name="s" class="form-control form-control-sm" placeholder="Search Properties" value="{{ request('s') }}">
                     </div>
@@ -85,10 +85,10 @@
                                 <a data-toggle="tooltip" data-placement="top" title="View" href="{{route('fronts.property', $property->hashid)}}" target="_blank" class="btn btn-info btn-xs waves-effect waves-light px-0">
                                     <span class="btn-label" style="margin: 0 !important"><i class="fa fa-eye"></i></span>
                                 </a>
-                                <a data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('vendors.properties.edit', $property->hashid) }}"    class="btn btn-success btn-xs waves-effect waves-light px-0">
-                                    <span class="btn-label" style="margin: 0 !important"><i class="fa fa-pencil-alt"></i></span></a>
+                                {{-- <a data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('vendors.properties.edit', $property->hashid) }}"    class="btn btn-success btn-xs waves-effect waves-light px-0">
+                                    <span class="btn-label" style="margin: 0 !important"><i class="fa fa-pencil-alt"></i></span></a> --}}
                                 {{--@if($property->status=!'Deleted') --}}   
-                                <button data-toggle="tooltip" data-placement="top" title="Delete" type="button" onclick="ajaxRequest(this)" data-url="{{ route('vendors.properties.delete', $property->hashid) }}"  class="btn btn-danger btn-xs waves-effect waves-light px-0">
+                                <button data-toggle="tooltip" data-placement="top" title="Delete" type="button" onclick="ajaxRequest(this)" data-url="{{ route('admin.properties.delete', $property->hashid) }}"  class="btn btn-danger btn-xs waves-effect waves-light px-0">
                                     <span class="btn-label" style="margin: 0 !important"><i class="fa fa-trash"></i></span>
                                 </button>
                                 {{-- @endif --}} 
@@ -136,7 +136,7 @@
 
 <script>
     function getPropertyDocuments(id, title){
-        var url = '{{route("vendors.properties.get_documents", "")}}/'+id;
+        var url = '{{route("admin.properties.get_documents", "")}}/'+id;
         getAjaxRequests(url, {}, 'post', function(res){
             $("#documentsModalBody").html(res.html);
             $("#documentsModalTitle").html(title);
@@ -144,7 +144,7 @@
         })
     }
     function viewProduct(id){
-        var url = '{{route("vendors.properties.index", "")}}/'+id;
+        var url = '{{route("admin.properties.index", "")}}/'+id;
         getAjaxRequests(url, {}, 'post', function(res){
             $("#approvePropertyBody").html(res.html);
             $("#approvePropertyTitle").html("Approve Property");

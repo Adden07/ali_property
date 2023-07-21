@@ -29,7 +29,7 @@ class PropertyController extends Controller
         }
         $data = array(
             'title' => 'Properties',
-            'all_properties' => $property->latest()->paginate(getPaginationPerPage())
+            'all_properties' => $property->where('user_id', auth()->id())->latest()->paginate(getPaginationPerPage())
         );
         return view('vendors.property.index')->with($data);
     }

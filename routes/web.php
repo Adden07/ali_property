@@ -143,6 +143,13 @@ Route::prefix('web_admin')->namespace('Administrator')->middleware('auth:admin')
     Route::get('/terms-of-use', 'SettingController@termsOfUseForm')->name('terms_of_use_form');
     Route::post('/terms-of-use', 'SettingController@termsOfUse')->name('terms_of_use');
 
+    //properties routes
+    Route::controller(PropertyController::class)->prefix('properties')->name('properties.')->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::post('/documents/{property_id?}', 'getDocuments')->name('get_documents');
+        Route::get('/delete/{id}', 'delete')->name('delete');
+    });
+
 });
 
 //vendor login routes
@@ -209,7 +216,7 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::post('/vendor-signup', 'vendorSignup')->name('vendor_signup');
         Route::post('/agent-request', 'agentRequest')->name('agent_request');
         Route::get('/properties', 'allProperties')->name('all_properties');
-        Route::get('/property', 'property')->name('property');
+        Route::get('/property/{id}', 'property')->name('property');
     });
 });
 

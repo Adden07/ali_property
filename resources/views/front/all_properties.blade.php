@@ -218,167 +218,25 @@
 
         <div class="property_listing">
             <div class="row">
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
+                @foreach($properties AS $property)
+                    <div class="col-md-3">
+                        <div class="properties">
+                            <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none">
+                                <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
+                                <div class="properties_content">
+                                    <h5>Luxury Home</h5>
+                                    <h5 class="mb-2 price">$ {{ number_format($property->price) }}</h5>
+                                    <p>{{ $property->rooms }} Bed | {{ $property->bathrooms }} Bath | {{ $property->area }} sq ft</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="properties">
-                        <a href="javascript:void(0)" class="text-decoration-none">
-                            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg" width="100%">
-                            <div class="properties_content">
-                                <h5>Luxury Home</h5>
-                                <h5 class="mb-2 price">$ 300</h5>
-                                <p>6 Bed | 3 Bath | 720 sq ft</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
 
             <div class="row mb-5 mt-3">
-                <nav class="btm_pagination">
+                {{ $properties->links() }}
+                {{-- <nav class="btm_pagination">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
                             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
@@ -390,7 +248,7 @@
                             <a class="page-link" href="#">&raquo;</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> --}}
             </div>
 
         </div>
