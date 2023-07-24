@@ -22,9 +22,10 @@
                     <div class="input-group">
                         <select class="form-select" name="type_of_property" aria-label="Default select example">
                             <option selected>Type of Property</option>
-                            @foreach(get_property_types() as $val)
+                            {{-- @foreach(get_property_types() as $val)
                             <option value="{{$val}}" <?= (@$property->type == $val) ? 'selected' : '' ?>>{{$val}}</option>
-                            @endforeach
+                            @endforeach --}}
+                            {!! get_property_types() !!}
                         </select>
                         
                         <input type="text" name="city" placeholder="Enter City or country" class="form-control">
