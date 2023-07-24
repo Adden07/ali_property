@@ -56,7 +56,7 @@
     
     function vendor_chat_profile(_self){
         let name      = $(_self).data('name');
-        let url       = "{{ route('fronts.get_messages') }}";
+        let url       = "{{ route('vendors.get_messages') }}";
         vendor_id     = $(_self).data('id');
 
         $('#vendor_chat_name').html(name);
@@ -71,7 +71,7 @@
        if(vendor_id != null){//if vendor or receiver_id is set
             let message = $('#message').val();//get the message
             if(message != ''){//check its not empty message
-                let url = "{{ route('fronts.send_message') }}"
+                let url = "{{ route('vendors.send_message') }}"
                 getAjaxRequests(url, {vendor_id : vendor_id, message:message}, 'GET', function(respones){
                     $('.messages-chat').html(respones.html);
                     $('#message').val('');
@@ -87,7 +87,7 @@
 
     function get_messages(){
         if(vendor_id != null){
-            let url       = "{{ route('fronts.get_messages') }}";
+            let url       = "{{ route('vendors.get_messages') }}";
             getAjaxRequests(url, {vendor_id : vendor_id}, 'GET', function(respones){
                 $('.messages-chat').html(respones.html);
             }, false);

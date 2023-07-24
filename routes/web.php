@@ -161,6 +161,9 @@ Route::prefix('vendors')->namespace('Auth')->group(function () {
 //vendor routes
 Route::prefix('vendors')->namespace('Vendor')->name('vendors.')->middleware('auth:vendor')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/chat', 'HomeController@chat')->name('chat');
+    Route::get('/get-message', 'HomeController@getMessages')->name('get_messages');
+    Route::get('/send-message', 'HomeController@sendMessage')->name('send_message');
     //packages routes
     // Route::controller(PackageController::class)->prefix('packages')->name('packages.')->group(function(){
     //     Route::get('/', 'index')->name('index');
@@ -217,7 +220,9 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::post('/agent-request', 'agentRequest')->name('agent_request');
         Route::get('/properties', 'allProperties')->name('all_properties');
         Route::get('/property/{id}', 'property')->name('property');
-        Route::get('/chat', 'chat')->name('chat');
+        Route::get('/chat', 'chat')->name('chat')->middleware('auth:web');
+        Route::get('/get-message', 'getMessages')->name('get_messages');
+        Route::get('/send-message', 'sendMessage')->name('send_message');
     });
 });
 

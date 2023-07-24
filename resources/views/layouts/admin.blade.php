@@ -377,6 +377,12 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="{{ route('vendors.chat') }}">
+                                <i class="fe-airplay"></i>
+                                <span> Chat </span>
+                            </a>
+                        </li>
                         {{-- <li>
                             <a href="javascript: void(0);" aria-expanded="true">
                                 <i class="fe-pocket"></i>

@@ -11,6 +11,8 @@ use App\Http\Requests\TravelTourBookingRequest;
 use App\Http\Requests\VendorRequest;
 use App\Models\AffiliatePartnership;
 use App\Models\AgentRequest as ModelsAgentRequest;
+use App\Models\Chat;
+use App\Models\ChatDetail;
 use App\Models\ContactUs;
 use App\Models\Faq;
 use App\Models\Newsletter;
@@ -28,6 +30,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
@@ -332,6 +335,34 @@ class HomeController extends Controller
     }
 
     public function chat(){
-        return view('front.chat');
+        $data = array(
+            'vendors'   => Vendor::latest()->get(),
+        );
+        return view('front.chat')->with($data);
+    }
+
+    public function getMessages(Request $req){
+
+        $chat = Chat::with(['chatDetails'])->where('user_id', auth('web')->id())->where('vendor_id', hashids_decode($req->vendor_id))->first();
+
+        return response()->json([
+            'html'  => view('front.chat_messages', compact('chat'))->render()
+        ]);
+    }
+
+    public function sendMessage(Request $req){
+        $chat = Chat::firstorCreate(
+            ['user_id'=>auth('web')->id(), 'vendor_id'=>hashids_decode($req->vendor_id)],
+            ['user_id'=>auth('web')->id(), 'vendor_id'=>hashids_decode($req->vendor_id), 'chat_id'=>Str::random(20)]
+        );
+        $message = new ChatDetail;
+        $message->user_id = auth('web')->id();
+        $message->message = $req->message;
+        $message->chat_id  = $chat->chat_id;
+        $message->save();
+
+        return response()->json([
+            'html'  => view('front.chat_messages', compact('chat'))->render()
+        ]);
     }
 }
