@@ -19,7 +19,7 @@
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane show active" id="property" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                 <form class="search-property">
-                    <div>
+                    <div class="input-group">
                         <select class="form-select" name="type_of_property" aria-label="Default select example">
                             <option selected>Type of Property</option>
                             @foreach(get_property_types() as $val)
@@ -36,7 +36,7 @@
 
             <div class="tab-pane" id="agent" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                 <form class="search-agent">
-                    <div>
+                    <div class="input-group">
 
                         <input type="text" name="" placeholder="Enter Your Zip Code" class="form-control">
 
@@ -164,9 +164,12 @@
             @foreach($properties AS $property)
                 <div class="col-md-3 properties">
                     <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none">
-                        <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
-                        <h5>{{ number_format($property->price, 2) }}</h5>
-                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
+                        <img src="{{ asset(@$property->thumbnail->image) }}" class="property_image" width="100%">
+                        <div class="properties_content">
+                            <h5 class="title">{{ $property->title }}</h5>
+                            <h5 class="price">$ {{ number_format($property->price, 2) }}</h5>
+                            <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
+                        </div>
                     </a>
                 </div>
             @endforeach
@@ -221,7 +224,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent1.png') }}">
@@ -235,7 +238,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent2.png') }}">
@@ -249,7 +252,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent3.png') }}">
@@ -263,7 +266,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent4.png') }}">
@@ -277,7 +280,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent5.png') }}">
@@ -290,7 +293,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 agents">
+            <div class="col-lg-4 col-md-6 agents">
                 <div class="d-flex">
                     <div class="flex-shrink-0">
                         <img src="{{ asset('front_assets/imgs/agent6.png') }}">
@@ -341,7 +344,7 @@
 </section>
 
 <section class="request-form">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <h2>Want to become a Real Estate Agent?</h2>
@@ -356,7 +359,7 @@
                     @csrf
                     <div class="row req-form">
                         <div class="col-md-6">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name">
+                            <input type="text" name="name" class="form-control name" placeholder="Your Name">
                         </div>
                         <div class="col-md-6">
                             <input type="text" name="contact_no" class="form-control" placeholder="Contact Number">

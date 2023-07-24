@@ -16,19 +16,10 @@
     margin-right: auto !important;
     margin-top: 35px;
 }
-
-.banner ul.nav-tabs .nav-link.active {
-    color: #217EEB;
-    font-weight: 600;
-}
-
-.banner ul.nav-tabs .nav-link {
-    color: white;
-    font-weight: 600;
-}
-
+.banner ul.nav-tabs .nav-link.active{color: #217EEB;font-weight: 600;}
+.banner ul.nav-tabs .nav-link{color: white;font-weight: 600;}
 .banner_main{background-image: url(../imgs/banner-bg.png);background-size: cover;background-repeat: no-repeat; padding-bottom: 50px;}
-.banner, .agents-banner, .become-agent {
+.banner, .agents-banner, .become-agent{
     background-image: url(../imgs/banner-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,21 +28,21 @@
     color: white;
 }
 
-form.search-property div, form.search-agent div {
+form.search-property div, form.search-agent div{
     background-color: white;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5px;
-    padding: 6px 0px;
+    border-radius: 0px 5px 5px 5px;
+    padding: 6px 5px;
 }
 
-.banner form.search-property select.form-select {
-    display: inline-block;
+.banner form.search-property select.form-select{
+    /* display: inline-block;
     width: auto;
-    float: left;
+    float: left; */
     border-radius: 5px;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     font-size: 14px;
     font-weight: 400;
     color: #333;
@@ -63,11 +54,13 @@ form.search-property div, form.search-agent div {
 }
 
 .banner form.search-property input {
-    float: left;
+    /* float: left; */
     background-color: transparent;
-    padding: 7px 0px;
+    /* padding: 7px 0px; */
     border: 0px;
-    width: 57%;
+    width: 35%;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .banner form.search-property button, .banner form.search-agent button {
@@ -75,15 +68,14 @@ form.search-property div, form.search-agent div {
     background-color: #217EEB;
     color: white;
     border-radius: 2px;
-    padding: 6px 18px;
+    padding: 6px 10px;
 }
 
 .banner form.search-agent input {
+    box-shadow: none !important;
     background-color: transparent;
     padding: 7px 10px;
     border: 0px;
-    float: left;
-    width: 68%;
     margin-left: 10px;
 }
 
@@ -126,10 +118,7 @@ form.search-property div, form.search-agent div {
     font-weight: 500;
     font-size: 14px;
 }
-.nav_main nav .account a{
-    text-decoration: none;
-    margin: 0px 10px;
-}
+.nav_main nav .account a{text-decoration: none;margin: 0px 10px;}
 .signup_btn,
 .nav_main nav .account a#signup{
     background-color: #217EEB;
@@ -150,9 +139,10 @@ form.search-property div, form.search-agent div {
 .nav_main nav .account a#login{
     background-color: transparent;
     padding: 10px 20px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     border-radius: 5px;
+    color: #000;
 }
 .slider-content{
     width: 70%;
@@ -203,10 +193,7 @@ form.search-property div, form.search-agent div {
     border-radius: 5px !important;
     text-indent: 25px;
 }
-.slider-content .search input::placeholder{
-    /* padding-left: 25px !important; */
-    color: #333333;
-}
+.slider-content .search input::placeholder{/* padding-left: 25px !important; */color: #333333;}
 .slider-content .search input:focus{
     border: 0px !important;
     box-shadow: none !important;
@@ -278,24 +265,10 @@ form.search-property div, form.search-agent div {
     text-align: center;
 }
 
-.property-sale {
-    margin-top: 120px;
-}
-
-.property-sale .heading {
-    margin-bottom: 40px;
-}
-
-.property-sale .heading h3 {
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.property-sale .heading p {
-    font-size: 16px;
-    font-weight: 500;
-}
-
+.property-sale{margin-top: 120px;}
+.property-sale .heading{margin-bottom: 40px;}
+.property-sale .heading h3{font-size: 28px;font-weight: 700;}
+.property-sale .heading p{font-size: 16px;font-weight: 500;}
 
 .property-sale .heading a {
     color: white;
@@ -306,36 +279,29 @@ form.search-property div, form.search-agent div {
     border-radius: 5px;
 }
 
-.property-sale .properties {
+.property-sale .properties{
     border: 1px solid #ddd;
     border-radius: 17px;
     margin: 0px 10px;
     padding: 0;
 }
 
-.property-sale .properties a {
-    color: unset;
-}
+.property-sale .properties .properties_content{padding: 10px 15px;}
 
-.property-sale .properties h5 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 20px;
-    padding-left: 15px;
-}
+.property-sale .properties a{color: unset;}
+.property-sale .properties h5.price{font-size: 18px;}
+.property-sale .properties .title{font-weight: 700;margin-bottom: 0;}
 
 .property-sale .properties p {
     font-size: 16px;
     font-weight: 400;
     color: #333;
-    padding-left: 15px;
+    margin-bottom: 0;
 }
 
 .inspire_sliderinner{margin-right: 20px;}
 .inspire_sliderinner img{border-radius: 20px;}
-
-.property-sale .properties img{max-height: 257px; object-fit: cover;}
-
+.property-sale .properties img.property_image{min-height: 170px;max-height: 170px;object-fit: cover;}
 .thumbnail {
     list-style: none;
     padding: 0;
@@ -525,7 +491,8 @@ form.search-property div, form.search-agent div {
     background-image: url(../imgs/banner-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 100px 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .request-form h2 {
@@ -553,7 +520,7 @@ form.search-property div, form.search-agent div {
 
 .request-form .form {
     background-color: white;
-    padding: 40px;
+    padding: 20px 15px;
     border-radius: 10px;
     text-align: center;
 }
@@ -564,7 +531,6 @@ form.search-property div, form.search-agent div {
     font-size: 28px;
 }
 
-
 .request-form .form p {
     width: 515px;
     margin: 25px auto;
@@ -573,20 +539,9 @@ form.search-property div, form.search-agent div {
     font-size: 16px;
 }
 
-.request-form .form .req-form {
-    width: 100%;
-    margin: 0px;
-}
-
-.request-form .form .req-form input {
-    border-radius: 0px;
-    height: 52px;
-}
-
-.request-form .form .req-form textarea {
-    border-radius: 0px;
-    margin: 20px 0px 35px;
-}
+.request-form .form .req-form{width: 100%;margin: 0px;}
+.request-form .form .req-form input{border-radius: 0px;height: 52px;}
+.request-form .form .req-form textarea{border-radius: 0px;margin: 20px 0px 35px;min-height: 120px;resize: none;}
 
 .request-form .form .req-form button {
     width: 100%;
@@ -595,15 +550,15 @@ form.search-property div, form.search-agent div {
     border-radius: 5px;
     font-weight: 500;
     font-size: 14px;
+    padding: 10px 15px;
 }
 
 .footer{padding-top: 80px;background-color: #F5F5F5;}
-.footer .footer-sections{padding: 0px 30px;}
+/* .footer .footer-sections{padding: 0px 30px;} */
 .footer .footer-sections p {
     font-weight: 400;
     font-size: 16px;
     color: #333;
-    width: 272px;
     margin-top: 20px;
 }
 
@@ -643,20 +598,15 @@ form.search-property div, form.search-agent div {
 	background-color: black;
 	padding-top: 11px;
     padding-bottom: 11px;
-	height: 50px;
 }
 
 .copyright .links p{
-    float: right;
-    padding-right: 20px;
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 0;
 }
 
 .copyright .rights p{
-    float: left;
-    padding-left: 20px;
     font-weight: 400;
     font-size: 16px;
     margin-bottom: 0;
@@ -1105,13 +1055,326 @@ margin-left: 3px;}
 .listing_toparea{background-color: whitesmoke;padding: 15px 15px; border-radius: 5px;}
 
 .property_listing .properties{border: 1px solid #eee;border-radius: 5px; margin-bottom: 20px;}
-.property_listing .properties img{border-radius: 5px 5px 0px 0px;margin-bottom: 10px;}
+.property_listing .properties img{border-radius: 5px 5px 0px 0px;margin-bottom: 10px;min-height: 170px;max-height: 170px;object-fit: cover;}
 .property_listing .properties .properties_content{padding: 10px 15px;}
-.property_listing .properties .properties_content h5{color: #070510; margin-bottom: 0;}
+.property_listing .properties .properties_content h5{color: #070510; margin-bottom: 0;font-weight: 700;}
 .property_listing .properties .properties_content h5.price{font-size: 18px;}
 .property_listing .properties .properties_content p{color: #a6a3ba; font-size: 15px;}
 .btm_pagination .pagination a{color: #070510;}
 .btm_pagination .pagination a.active{background-color: #217EEB; color: #fff;}
+
+
+.float_chat{position: fixed;right: 35px;bottom: 30px;font-size: 25px;background-color: #f1f1f1;padding: 15px;border-radius: 50%;width: 65px;height: 65px;}
+
+/* @media(min-width: 992px){
+    .nav_main #navbarSupportedContent{order: 1}
+    .nav_main .account{order: 2;}
+    .nav_main .country-select{order: 3;}
+} */
+
+/* .slick-prev{left: 0;} */
+.slick-next{right: 0;}
+
+
+/* Chat Css */
+
+/* === CONVERSATIONS === */
+  
+.discussions{
+    width: 35%;
+    height: 700px;
+    box-shadow: 0px 8px 10px rgba(0,0,0,0.20);
+    overflow: auto;
+    background-color: #217EEB;
+    display: inline-block;
+    padding: 0;
+}
+
+/* width */
+.discussions::-webkit-scrollbar{width: 10px;}
+
+/* Track */
+.discussions::-webkit-scrollbar-track{background: #f1f1f1;}
+
+/* Handle */
+.discussions::-webkit-scrollbar-thumb{background: #217EEB;}
+  
+/* Handle on hover */
+.discussions::-webkit-scrollbar-thumb:hover{background: #87a3ec;}
+
+.discussions .discussion {
+    width: 100%;
+    height: 90px;
+    background-color: #FAFAFA;
+    border-bottom: solid 1px #E0E0E0;
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.discussions .search {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #E0E0E0;
+}
+
+.discussions .search .searchbar {
+    height: 40px;
+    background-color: #FFF;
+    width: 70%;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid #EEEEEE;
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.discussions .search .searchbar input {
+    margin-left: 15px;
+    height:38px;
+    width:100%;
+    border:none;
+}
+
+.discussions .search .searchbar *::-webkit-input-placeholder{color: #E0E0E0;}
+.discussions .search .searchbar input *:-moz-placeholder{color: #E0E0E0;}
+.discussions .search .searchbar input *::-moz-placeholder{color: #E0E0E0;}
+.discussions .search .searchbar input *:-ms-input-placeholder{color: #E0E0E0;}
+  
+.discussions .message-active {
+    width: 98.5%;
+    height: 90px;
+    background-color: #FFF;
+    border-bottom: solid 1px #E0E0E0;
+}
+
+.discussions .discussion .photo {
+    margin-left:20px;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: #E6E7ED;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.online {
+    position: relative;
+    top: 30px;
+    left: 35px;
+    width: 13px;
+    height: 13px;
+    background-color: #8BC34A;
+    border-radius: 13px;
+    border: 3px solid #FAFAFA;
+}
+
+.desc-contact {
+    height: 43px;
+    width:50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.discussions .discussion .name {
+    margin: 0 0 0 20px;
+    font-size: 11pt;
+    color:#515151;
+}
+
+.discussions .discussion .message {
+    margin: 6px 0 0 20px;
+    font-size: 9pt;
+    color:#515151;
+}
+  
+.timer {
+    margin-left: 15%;
+    font-size: 11px;
+    padding: 3px 8px;
+    color: #BBB;
+    background-color: #FFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 15px;
+}
+  
+.chat {
+    width: calc(65% - 85px);
+    position: relative;
+    padding-right: 0;
+}
+  
+  .header-chat {
+    background-color: #FFF;
+    height: 90px;
+    box-shadow: 0px 3px 2px rgba(0,0,0,0.100);
+    display:flex;
+    align-items: center;
+  }
+  
+/* .chat .header-chat .icon {
+margin-left: 30px;
+color:#515151;
+font-size: 14pt;
+} */
+  
+.chat .header-chat .name{margin: 0 0 0 20px; text-transform: uppercase;font-size: 13pt; color:#515151;}
+
+/* .chat .header-chat .right{position: absolute;right: 40px;} */
+  
+.chat .messages-chat{padding: 25px 35px;max-height: 530px;overflow: auto;}
+
+
+/* width */
+.chat .messages-chat::-webkit-scrollbar{width: 10px;}
+  
+/* Track */
+.chat .messages-chat::-webkit-scrollbar-track{background: #f1f1f1;}
+  
+/* Handle */
+.chat .messages-chat::-webkit-scrollbar-thumb{background: #217EEB;}
+  
+/* Handle on hover */
+.chat .messages-chat::-webkit-scrollbar-thumb:hover{background: #87a3ec;}
+
+.chat .messages-chat .message{display:flex;align-items: center;margin-bottom: 8px;}
+
+.chat .messages-chat .message .photo {
+    display: block;
+    width: 45px;
+    height: 45px;
+    background: #E6E7ED;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+  
+.chat .messages-chat .text{
+margin: 0 35px;
+background-color: #f6f6f6;
+padding: 15px;
+border-radius: 12px;
+color: #000;
+}
+  
+.text-only{margin-left: 45px;}
+
+.time {
+font-size: 10px;
+color:lightgrey;
+margin-bottom:10px;
+margin-left: 85px;
+}
+
+.response-time {
+float: right;
+margin-right: 40px !important;
+}
+
+.response {
+float: right;
+margin-right: 0px !important;
+margin-left:auto; /* flexbox alignment rule */
+}
+  
+.response .text{background-color: #e3effd !important;}
+  
+.footer-chat{
+    width: 100%;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    background-color: #fff;
+    border-top: 2px solid #EEE;
+}
+  
+.chat .footer-chat .icon {
+    margin-left: 30px;
+    color:#C0C0C0;
+    font-size: 14pt;
+}
+
+.chat .footer-chat .send {
+    color:#fff;
+    background-color: #4f6ebd;
+    position: absolute;
+    right: 10px;
+    padding: 12px 12px 12px 12px;
+    border-radius: 50px;
+    font-size: 14pt;
+}
+
+.chat .footer-chat .name {
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+    font-family:'Montserrat', sans-serif;
+    font-size: 13pt;
+    color:#515151;
+}
+
+.chat .footer-chat .right{position: absolute;right: 40px;}
+
+.write-message {
+    border:none !important;
+    width:100%;
+    height: 50px;
+    padding: 10px;
+    padding-right: 75px;
+}
+  
+.footer-chat *::-webkit-input-placeholder{color: #C0C0C0;font-size: 13pt;}
+.footer-chat input *:-moz-placeholder{color: #C0C0C0;font-size: 13pt;}
+.footer-chat input *::-moz-placeholder{color: #C0C0C0;font-size: 13pt;margin-left:5px;}
+.footer-chat input *:-ms-input-placeholder{color: #C0C0C0;font-size: 13pt;}
+.clickable{cursor: pointer;}
+
+/* End Chat Css */
+
+
+@media(max-width: 1024px){
+    .agents-banner h1{width: initial;}
+    .request-form .form p{width: initial;}
+}
+
+@media(max-width: 992px){
+    .signup_btn, .nav_main nav .account a#signup{margin-bottom: 10px;}
+}
+
+@media(max-width: 768px){
+    form.search-property div, form.search-agent div,.banner ul.nav-tabs{width: 75% !important;}
+    .become-agent h1,
+    .agents-banner h1{font-size: 30px;}
+    .about-section h2{font-size: 25px;}
+    .request-form h2,
+    .become-agent h1{width: initial;}
+}
+
+@media(max-width: 700px){
+    .meet-agents .d-flex.heading,
+    .property-sale .d-flex.heading{display: block !important;}
+    .form{margin-top: 40px;}
+    .request-form .form{padding: 20px 15px;}
+    .request-form .form .req-form .name{margin-bottom: 20px;}
+    .request-form{padding: 100px 25px;}
+    .request-form h2{padding-top: 0;}
+    .agents-banner .agents p{height: initial;}
+    .agents-banner .agents a img{margin-top: 5px;margin-bottom: 5px;}
+    .links p{margin: 10px 0;}
+}
+
+@media(max-width: 600px){
+    form.search-property div, form.search-agent div, .banner ul.nav-tabs{width: 90% !important;}
+}
+
+.navbar-toggler{border: 1px solid #d4d4d4;}
 
 
 /* Helper Classes */
