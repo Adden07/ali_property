@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Amenity;
+use App\Models\PropertyType;
+
 if (!function_exists('get_fulltime')) {
 
     function get_fulltime($date, $format = 'd, M Y @ h:i a')
@@ -235,21 +238,21 @@ if (!function_exists('since')) {
 }
 
 
-if (!function_exists('get_property_types')) {
+// if (!function_exists('get_property_types')) {
 
-    function get_property_types()
-    {
-        $arr = array(
-            'Single Family Residence',
-            'Multi Family Residence',
-            'Commercial',
-            'Land',
-            'Other'
+//     function get_property_types()
+//     {
+//         $arr = array(
+//             'Single Family Residence',
+//             'Multi Family Residence',
+//             'Commercial',
+//             'Land',
+//             'Other'
 
-        );
-        return $arr;
-    }
-}
+//         );
+//         return $arr;
+//     }
+// }
 
 function getPaginationView()
 {
@@ -417,5 +420,28 @@ if (!function_exists('check_file')) {
             }
             return dummy_image($type);
         }
+    }
+}
+
+if(!function_exists('get_property_types')){
+    function get_property_types($selected=null){
+
+        $types = PropertyType::get();
+        $html = '';
+        foreach($types->groupBy('type') AS $type){
+            $html .= "<optgroup label='".ucwords($type[0]->type)."'>";
+            foreach($type AS $property_type){
+                
+                $html .= "<option value='$property_type->property_type' " . ($selected != null && $selected == $property_type->property_type ? 'selected' : '') . ">" . ucwords($property_type->property_type) . "</option>";
+            } 
+            $html .= "</option>";
+        }
+        return $html;
+    }
+}
+
+if(!function_exists('get_amenities')){
+    function get_amenities(){
+        return Amenity::get()->pluck('amenity')->toArray();
     }
 }

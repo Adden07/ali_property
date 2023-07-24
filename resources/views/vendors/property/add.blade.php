@@ -122,6 +122,19 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <h4 class="mb30">Enter Property Details</h4>
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                        <div class="my_profile_setting_input form-group">
+                                            <label for="propertyTitle">Property Purpose</label>
+                                            <select class="form-control" name="purpose" id="purpose">
+                                                <option value="">Select purpose</option>
+                                                <option value="rent" @if(@$property->purpose == 'rent') selected @endif>Rent</option>
+                                                <option value="sell" @if(@$property->purpose == 'sell') selected @endif>Sell</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
                                         <div class="my_profile_setting_input form-group">
                                             <label for="propertyTitle">Property Title</label>
                                             <input type="text" class="form-control" id="propertyTitle" value="{{@$property->title}}" name="title" data-parsley-required>
@@ -137,17 +150,15 @@
                                     <div class="col-lg-6 col-xl-6 mt-3">
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
                                             <label>Type</label>
-                                            <select class="form-control" data-live-search="true" data-width="100%" name="type">
-                                                @foreach(get_property_types() as $val)
-                                                <option value="{{$val}}" <?= (@$property->type == $val) ? 'selected' : '' ?>>{{$val}}</option>
-                                                @endforeach
+                                            <select class="form-control" data-live-search="true" data-width="100%" name="type" id="type">
+                                                {!! get_property_types(@$property->type) !!}
                                             </select>
 
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-xl-6 mt-3">
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
-                                            <label>Starting Offer Price</label>
+                                            <label>Price</label>
                                             <input type="number" class="form-control @error('formGroupExamplePrice') is-invalid @enderror" id="formGroupExamplePrice" name="price" data-parsley-required value="{{@$property->price}}">
                                             @error('formGroupExamplePrice')
                                             <span class="invalid-feedback" role="alert">
@@ -170,7 +181,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-xl-4">
+                                    <div class="col-lg-4 col-xl-4" id="rooms_div">
                                         <div class="my_profile_setting_input ui_kit_select_search form-group">
                                             <label>Rooms</label>
                                             <select class="form-control " data-live-search="true" data-width="100%" name="rooms" data-parsley-required>
@@ -186,7 +197,7 @@
                                     </div>
 
 
-                                    <div class="col-lg-6 col-xl-4">
+                                    <div class="col-lg-6 col-xl-4" id="bathrooms_div">
                                         <div class="my_profile_setting_input form-group ui_kit_select_search">
                                             <label for="bathRooms">Bathrooms</label>
                                             <!-- <input type="text" class="form-control" id="bathRooms" name="bathrooms" > -->
@@ -218,22 +229,23 @@
                                     </div>
 
 
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="my_profile_setting_input form-group ui_kit_select_search">
-                                            <label for="start_date">Offer Start At:</label>
-                                            <input type="text"  class="form-control human_timepicker"  name="start_date"  value="{{@$property->start_offer_at}}" data-parsley-required>
+                                    <div class="amenities col-12">
+                                        <label for="amenities">Amenities</label>
+                                    </div>
+                                    
+                                    @foreach(get_amenities() AS $amenity)
+                                    <div class="col-lg-6 col-xl-3">
+                                        <div class="my_profile_setting_input form-group">
+                                            <label>
+                                                <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
+                                                {{ $amenity }}
+                                            </label>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-xl-6">
-                                        <div class="my_profile_setting_input form-group ui_kit_select_search">
-                                            <label for="end_date">Offer End At:</label>
-                                            <input type="text" class="form-control human_timepicker"  name="end_date" value="{{@$property->end_offer_at}}" data-parsley-required >
-                                        </div>
-                                    </div>
+                                @endforeach
+                                
 
-                                   
-
-
+                                
                                     <!-- <div class="col-xl-12 mb-3">
                                         <h4>Amenities</h4>
                                     </div> -->
@@ -713,7 +725,21 @@
 
             })
         })
-    })
+    });
+
+    $('#type').change(function(){
+        var selectedOption = $(this).find('option:selected');
+        var optgroup = selectedOption.closest('optgroup');
+        var optgroupLabel = optgroup.attr('label');
+
+        if(optgroupLabel == 'Plots'){
+            $('#rooms_div').addClass('d-none');
+            $('#bathrooms_div').addClass('d-none');
+        }else{
+            $('#rooms_div').removeClass('d-none');
+            $('#bathrooms_div').removeClass('d-none');
+        }
+    });
 
 </script>
 

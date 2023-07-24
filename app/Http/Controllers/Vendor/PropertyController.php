@@ -58,7 +58,8 @@ class PropertyController extends Controller
             $property->status = 'Recently Added';
             $property->country = "USA";
         }
-        
+        $property->purpose = $request->purpose;
+        $property->amenities = json_encode($request->amenities);
         $property->description = $request->description;
         $property->type = $request->type;
         $property->price = $request->price;
