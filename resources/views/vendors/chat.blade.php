@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-1 mb-5">
         <section class="discussions">
             <!-- <div class="discussion search">
                 <div class="searchbar">
@@ -57,7 +57,7 @@
             </div>
             <div class="footer-chat">
                 <input type="text" class="write-message" placeholder="Type your message here" id="message"></input>
-                <i class="icon send fa-regular fa-paper-plane clickable" aria-hidden="true" onclick="send_messages()"></i>
+                <i class="icon send fa fa-paper-plane clickable" aria-hidden="true" onclick="send_messages()"></i>
             </div>
             <span class="text-danger d-none" id="empty_message_alert">please type a message</span>
         </section>

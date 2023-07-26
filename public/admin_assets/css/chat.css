@@ -129,6 +129,7 @@
     width: calc(65% - 85px);
     position: relative;
     padding-right: 0;
+    margin-left: 5px;
 }
   
   .header-chat {
