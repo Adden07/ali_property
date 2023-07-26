@@ -18,13 +18,10 @@
 
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane show active" id="property" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <form class="search-property">
+                <form class="search-property" action="{{ route('fronts.all_properties') }}">
                     <div class="input-group">
-                        <select class="form-select" name="type_of_property" aria-label="Default select example">
+                        <select class="form-select" name="property_type" aria-label="Default select example">
                             <option selected>Type of Property</option>
-                            {{-- @foreach(get_property_types() as $val)
-                            <option value="{{$val}}" <?= (@$property->type == $val) ? 'selected' : '' ?>>{{$val}}</option>
-                            @endforeach --}}
                             {!! get_property_types() !!}
                         </select>
                         
