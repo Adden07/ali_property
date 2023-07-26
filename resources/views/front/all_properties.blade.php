@@ -102,23 +102,13 @@
                                             </div>
 
                                             <!-- Form Group -->
-                                            {{-- @foreach(get_amenities() AS $amenity)
-                                            <div class="col-lg-6 col-xl-3">
-                                                <div class="my_profile_setting_input form-group">
-                                                    <label>
-                                                        <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
-                                                        {{ $amenity }}
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            @endforeach --}}
                                             @foreach(get_amenities() AS $amenity)
                                             <div class="col-md-4 col-lg-6 amenities">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label class="d-block">
                                                             {{ $amenity }}
-                                                            <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
+                                                            <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)) {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }}@endif >
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
