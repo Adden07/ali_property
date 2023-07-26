@@ -316,6 +316,7 @@ class HomeController extends Controller
     }
 
     public function allProperties(Request $req, $type=null){
+        // dd($req->all());
         $data = array(
             'title' => 'All Properties',
             'properties'    => Property::with(['images'])
@@ -324,7 +325,26 @@ class HomeController extends Controller
                                     })
                                     ->when($type != null && $type == 'rent', function($query){
                                         $query->where('purpose', 'rent');
-                                    })->paginate(config('app.per_page')),
+                                    })
+                                    ->when(isset($req->keyword) && !empty($req->keyword), function($query) use (&$req){
+                                        $query->whereLike(['title', 'description', 'price', 'area', 'rooms', 'bathrooms'], '%'.$req->keyword.'%');
+                                    })
+                                    ->when(isset($req->property_type) && !empty($req->property_type), function($query) use (&$req){
+                                        $query->where('type', $req->property_type);
+                                    })
+                                    ->when(isset($req->location), function($query) use (&$req){
+                                        // $query->where('location', $req->location);
+                                    })
+                                    ->when(isset($req->rooms) && !empty($req->rooms), function($query) use (&$req){
+                                        $query->where('rooms', $req->rooms);
+                                    })
+                                    ->when(isset($req->bathrooms) && !empty($req->bathrooms), function($query) use (&$req){
+                                        $query->where('bathrooms', $req->bathrooms);
+                                    })
+                                    ->when(isset($req->amenitites) && !empty($req->amenities), function($query) use (&$req){
+                                        $query->whereJsonContains('amenitites', $req->amenitites);
+                                    })
+                                    ->paginate(config('app.per_page')),
         );
         // dd($data['properties']);
         return view('front.all_properties')->with($data);

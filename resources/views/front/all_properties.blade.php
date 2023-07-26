@@ -14,27 +14,27 @@
                 <section class="listing-form-section">
                     <!-- Default Form -->
                     <div class="default-form">
-                        <form method="post" action="#">
+                        <form method="get" action="#">
                             <div class="row clearfix">
 
                                 <div class="form-group mb-3 col-lg-4 col-md-6 col-sm-12">
-                                    <input type="text" class="form-control" placeholder="Enter Keyword...">
+                                    <input type="text" class="form-control" placeholder="Enter Keyword..." name="keyword">
                                 </div>
 
                                 <!-- Form Group -->
                                 <div class="form-group mb-3 col-lg-3 col-md-6 col-sm-12">
-                                    <select class="form-select">
+                                    <select class="form-select" name="property_type">
                                         {!! get_property_types() !!}
                                     </select>
                                 </div>
 
                                 <!-- Form Group -->
                                 <div class="form-group mb-3 col-lg-3 col-md-6 col-sm-12">
-                                    <select class="form-select">
-                                        <option>Location</option>
-                                        <option>California</option>
-                                        <option>New York</option>
-                                        <option>Sydney</option>
+                                    <select class="form-select" name="location">
+                                        <option value="">Location</option>
+                                        <option value="">California</option>
+                                        <option value="">New York</option>
+                                        <option value="">Sydney</option>
                                     </select>
                                 </div>
 
@@ -52,31 +52,20 @@
 
                                             <!-- Form Group -->
                                             <div class="form-group mb-3 col-lg-4 col-md-6 col-sm-12">
-                                                <select class="form-select">
-                                                    <option>Room</option>
-                                                    <option>01</option>
-                                                    <option>02</option>
-                                                    <option>03</option>
+                                                <select class="form-select" name="rooms">
+                                                    <option value="">Room</option>
+                                                    <option value="1">01</option>
+                                                    <option value="2">02</option>
+                                                    <option value="3">03</option>
                                                 </select>
                                             </div>
-
                                             <!-- Form Group -->
                                             <div class="form-group mb-3 col-lg-4 col-md-6 col-sm-12">
-                                                <select class="form-select">
-                                                    <option>Bed</option>
-                                                    <option>01</option>
-                                                    <option>02</option>
-                                                    <option>03</option>
-                                                </select>
-                                            </div>
-
-                                            <!-- Form Group -->
-                                            <div class="form-group mb-3 col-lg-4 col-md-6 col-sm-12">
-                                                <select class="form-select">
-                                                    <option>Baths</option>
-                                                    <option>01</option>
-                                                    <option>02</option>
-                                                    <option>03</option>
+                                                <select class="form-select" name="bathrooms">
+                                                    <option value="">Baths</option>
+                                                    <option value="1">01</option>
+                                                    <option value="2">02</option>
+                                                    <option value="3">03</option>
                                                 </select>
                                             </div>
 
@@ -170,7 +159,7 @@
                             <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
                             <div class="properties_content">
                                 <div class="property_type">
-                                    Type: Apartment 
+                                    Type: {{ $property->type }} 
                                 </div>
                                 <h5>{{ $property->title }}</h5>
                                 <h5 class="mb-2 price">$ {{ number_format($property->price) }}</h5>
