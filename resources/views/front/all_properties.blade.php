@@ -24,10 +24,7 @@
                                 <!-- Form Group -->
                                 <div class="form-group mb-3 col-lg-3 col-md-6 col-sm-12">
                                     <select class="form-select">
-                                        <option>Property Type</option>
-                                        <option>Type One</option>
-                                        <option>Type Two</option>
-                                        <option>Type Three</option>
+                                        {!! get_property_types() !!}
                                     </select>
                                 </div>
 
@@ -105,84 +102,29 @@
                                             </div>
 
                                             <!-- Form Group -->
+                                            {{-- @foreach(get_amenities() AS $amenity)
+                                            <div class="col-lg-6 col-xl-3">
+                                                <div class="my_profile_setting_input form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
+                                                        {{ $amenity }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @endforeach --}}
+                                            @foreach(get_amenities() AS $amenity)
                                             <div class="col-md-4 col-lg-6 amenities">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label class="d-block">
-                                                            Air Conditioning
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Swimming Pool
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Central Heating
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Laundry Room
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Gym
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Alarm
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Window Covering
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label class="d-block">
-                                                            WiFi
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            TV Cable
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Dryer
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Microwave
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Washer
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Refrigerator
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                        <label class="d-block">
-                                                            Outdoor Shower
-                                                            <input type="checkbox">
+                                                            {{ $amenity }}
+                                                            <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
 
 
                                         </div>
