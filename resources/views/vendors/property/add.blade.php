@@ -221,7 +221,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 col-xl-4">
+                                    <div class="col-lg-6 col-xl-4" id="repair_div">
                                         <div class="my_profile_setting_input form-group">
                                             <label for="est_repair_cost">Estimated Cost Of Repair</label>
                                             <input type="number" class="form-control" id="est_repair_cost" name="est_repair_cost" value="{{@$property->est_repair_cost}}">
@@ -229,22 +229,22 @@
                                     </div>
 
 
-                                    <div class="amenities col-12">
-                                        <label for="amenities">Amenities</label>
-                                    </div>
-                                    
-                                    @foreach(get_amenities() AS $amenity)
-                                    <div class="col-lg-6 col-xl-3">
-                                        <div class="my_profile_setting_input form-group">
-                                            <label>
-                                                <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
-                                                {{ $amenity }}
-                                            </label>
+                                    <div id="amenities_div">
+                                        <div class="amenities col-12">
+                                            <label for="amenities">Amenities</label>
                                         </div>
+                                        
+                                        @foreach(get_amenities() AS $amenity)
+                                        <div class="col-lg-6 col-xl-3">
+                                            <div class="my_profile_setting_input form-group">
+                                                <label>
+                                                    <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
+                                                    {{ $amenity }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
-                                @endforeach
-                                
-
                                 
                                     <!-- <div class="col-xl-12 mb-3">
                                         <h4>Amenities</h4>
@@ -735,9 +735,13 @@
         if(optgroupLabel == 'Plots'){
             $('#rooms_div').addClass('d-none');
             $('#bathrooms_div').addClass('d-none');
+            $('#amenities_div').addClass('d-none');
+            $('#repair_div').addClass('d-none');
         }else{
             $('#rooms_div').removeClass('d-none');
             $('#bathrooms_div').removeClass('d-none');
+            $('#amenities_div').removeClass('d-none');
+            $('#repair_div').removeClass('d-none');
         }
     });
 
