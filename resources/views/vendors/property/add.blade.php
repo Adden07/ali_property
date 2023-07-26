@@ -229,21 +229,22 @@
                                     </div>
 
 
-                                    <div id="amenities_div">
-                                        <div class="amenities col-12">
+                                    <div id="amenities_div" class=" col-12">
+                                        <div class="amenities">
                                             <label for="amenities">Amenities</label>
                                         </div>
-                                        
-                                        @foreach(get_amenities() AS $amenity)
-                                        <div class="col-lg-6 col-xl-3">
-                                            <div class="my_profile_setting_input form-group">
-                                                <label>
-                                                    <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)){{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} @endif>
-                                                    {{ $amenity }}
-                                                </label>
+                                        <div class="row">
+                                            @foreach(get_amenities() AS $amenity)
+                                            <div class="col-lg-6 col-xl-3">
+                                                <div class="my_profile_setting_input form-group">
+                                                    <label>
+                                                        <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)){{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} @endif>
+                                                        {{ $amenity }}
+                                                    </label>
+                                                </div>
                                             </div>
+                                            @endforeach
                                         </div>
-                                        @endforeach
                                     </div>
                                 
                                     <!-- <div class="col-xl-12 mb-3">

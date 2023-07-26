@@ -1057,9 +1057,12 @@ margin-left: 3px;}
 .property_listing .properties{border: 1px solid #eee;border-radius: 5px; margin-bottom: 20px;}
 .property_listing .properties img{border-radius: 5px 5px 0px 0px;margin-bottom: 10px;min-height: 170px;max-height: 170px;object-fit: cover;}
 .property_listing .properties .properties_content{padding: 10px 15px;}
-.property_listing .properties .properties_content h5{color: #070510; margin-bottom: 0;font-weight: 700;}
-.property_listing .properties .properties_content h5.price{font-size: 18px;}
+.property_listing .properties .properties_content h5{font-weight: 700;margin-bottom: 10px;font-size: 16px; color: #333333;}
+.property_listing .properties .properties_content h5.price{font-size: 16px;font-weight: bold;color: #217EEB;}
 .property_listing .properties .properties_content p{color: #a6a3ba; font-size: 15px;}
+.property_listing .properties .properties_content .more_detail li{font-size: 16px; color: #333333;}
+.property_listing .properties .properties_content .more_detail img{width: initial; min-height: initial;}
+
 .btm_pagination .pagination a{color: #070510;}
 .btm_pagination .pagination a.active{background-color: #217EEB; color: #fff;}
 
