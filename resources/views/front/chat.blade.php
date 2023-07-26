@@ -36,7 +36,7 @@
             <div class="header-chat">
                 <i class="icon fa fa-user-o" aria-hidden="true"></i>
                 <p class="name" id="vendor_chat_name"></p>
-                <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+                <!-- <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i> -->
             </div>
             <div class="messages-chat">
 
