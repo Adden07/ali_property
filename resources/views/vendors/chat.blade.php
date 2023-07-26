@@ -64,7 +64,7 @@
     </div>
 </div>
 @endsection
-@section('script')
+@section('page-scripts')
 <script>
     var vendor_id = null;
 

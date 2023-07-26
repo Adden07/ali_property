@@ -1,4 +1,4 @@
-@foreach($chat->chatDetails()->get() AS $msg)
+@foreach(@$chat->chatDetails()->get() AS $msg)
     @if($msg->user_id == auth()->id())
         <div class="message text-only">
             <div class="response">
