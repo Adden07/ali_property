@@ -102,23 +102,20 @@
                                             </div>
 
                                             <!-- Form Group -->
-                                            @foreach(get_amenities() AS $amenity)
                                             <div class="col-md-4 col-lg-6 amenities">
                                                 <div class="row">
+                                                    @foreach(get_amenities() AS $amenity)
                                                     <div class="col-md-6">
                                                         <label class="d-block">
                                                             {{ $amenity }}
-                                                            <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)) {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }}@endif >
+                                                            <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)) {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }}@endif>
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
+                                                    @endforeach
                                                 </div>
                                             </div>
-                                            @endforeach
-
-
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -156,18 +153,38 @@
         <div class="property_listing">
             <div class="row">
                 @foreach($properties AS $property)
-                    <div class="col-md-3">
-                        <div class="properties">
-                            <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none">
-                                <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
-                                <div class="properties_content">
-                                    <h5>{{ $property->title }}</h5>
-                                    <h5 class="mb-2 price">$ {{ number_format($property->price) }}</h5>
-                                    <p>{{ $property->rooms }} Bed | {{ $property->bathrooms }} Bath | {{ $property->area }} sq ft</p>
+                <div class="col-md-3">
+                    <div class="properties">
+                        <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none position-relative d-block">
+                            <div class="position-absolute property_cate rent">
+                                Rent
+                            </div>
+
+                            <div class="position-absolute property_cate buy">
+                                Sell
+                            </div>
+
+                            <div class="position-absolute property_cate sold">
+                                Sold
+                            </div>
+                            <img src="{{ asset(@$property->thumbnail->image) }}" width="100%">
+                            <div class="properties_content">
+                                <div class="property_type">
+                                    Type: Apartment 
                                 </div>
-                            </a>
-                        </div>
+                                <h5>{{ $property->title }}</h5>
+                                <h5 class="mb-2 price">$ {{ number_format($property->price) }}</h5>
+
+                                <ul class="list-inline more_detail">
+                                    <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/double-bed.png') }}" alt="Beds" class="m-0 d-inline-block"> {{ $property->rooms }}</li>
+                                    <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/bathroom.png') }}" alt="Baths" class="m-0 d-inline-block"> {{ $property->bathrooms }}</li>
+                                    <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/house-design.png') }}" alt="Area" class="m-0 d-inline-block"> {{ $property->area }} sqft</li>
+                                </ul>
+
+                            </div>
+                        </a>
                     </div>
+                </div>
                 @endforeach
             </div>
 
