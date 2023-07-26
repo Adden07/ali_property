@@ -238,7 +238,7 @@
                                         <div class="col-lg-6 col-xl-3">
                                             <div class="my_profile_setting_input form-group">
                                                 <label>
-                                                    <input type="checkbox" name="amenities[]" value="{{ $amenity }}" {{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} >
+                                                    <input type="checkbox" name="amenities[]" value="{{ $amenity }}" @if(isset($property)){{ @in_array($amenity, json_decode(@$property->amenities)) ? 'checked' : '' }} @endif>
                                                     {{ $amenity }}
                                                 </label>
                                             </div>
