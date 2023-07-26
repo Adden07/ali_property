@@ -289,8 +289,8 @@ form.search-property div, form.search-agent div{
 .property-sale .properties .properties_content{padding: 10px 15px;}
 
 .property-sale .properties a{color: unset;}
-.property-sale .properties h5.price{font-size: 18px;}
-.property-sale .properties .title{font-weight: 700;margin-bottom: 0;}
+.property-sale .properties h5.price{font-size: 16px; font-weight: bold; color: #217EEB;}
+.property-sale .properties .title{font-weight: 700;margin-bottom: 10px;font-size: 16px;}
 
 .property-sale .properties p {
     font-size: 16px;
@@ -1335,6 +1335,13 @@ margin-left:auto; /* flexbox alignment rule */
 .clickable{cursor: pointer;}
 
 /* End Chat Css */
+
+
+.property_cate{font-weight: bold;left: 10px;top: 10px;color: #fff;padding: 4px 12px;border-radius: 5px;font-size: 16px;}
+.rent{background-color: #19469D}
+.buy{background-color: #33A137}
+.sold{background-color: #D02B2B;left: 76px;}
+.property_type{font-size: 16px;color: #333333; margin-bottom: 10px;}
 
 
 @media(max-width: 1024px){
