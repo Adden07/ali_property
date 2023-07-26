@@ -315,11 +315,18 @@ class HomeController extends Controller
         ]);
     }
 
-    public function allProperties(Request $req){
+    public function allProperties(Request $req, $type=null){
         $data = array(
             'title' => 'All Properties',
-            'properties'    => Property::with(['images'])->paginate(100),
+            'properties'    => Property::with(['images'])
+                                    ->when($type != null && $type == 'sell', function($query){
+                                        $query->where('purpose', 'sell');
+                                    })
+                                    ->when($type != null && $type == 'rent', function($query){
+                                        $query->where('purpose', 'rent');
+                                    })->paginate(config('app.per_page')),
         );
+        // dd($data['properties']);
         return view('front.all_properties')->with($data);
     }
 

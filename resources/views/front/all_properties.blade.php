@@ -136,15 +136,20 @@
     <div class="container">
         <div class="listing_toparea mb-4">
             <div class="d-flex justify-content-between align-items-center">
-                <div>Showing 1 to 12 of 30 entries</div>
-                <div>
+                @php
+                    $currentPage = $properties->currentPage();
+                    $startingIndex = ($currentPage - 1) * config('app.per_page') + 1;
+                    $endingIndex = ($currentPage - 1) * config('app.per_page') + $properties->count();
+                @endphp
+                <div>Showing {{ $startingIndex }} to {{ $endingIndex }} of {{ $properties->total() }} entries</div>
+                {{-- <div>
                     <select class="form-select">
                         <option>Top Selling</option>
                         <option>Most Viewed</option>
                         <option>Price(low to high)</option>
                         <option>Price(high to low)</option>
                     </select>
-                </div>
+                </div> --}}
             </div>
         </div>
 

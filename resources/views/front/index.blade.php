@@ -168,30 +168,31 @@
             @foreach($properties AS $property)
                 <div class="col-md-3 properties">
                     <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none position-relative">
+                        @if($property->purpose == 'rent')
                         <div class="position-absolute property_cate rent">
                             Rent
                         </div>
-
+                        @else 
                         <div class="position-absolute property_cate buy">
                             Sell
                         </div>
-
-                        <div class="position-absolute property_cate sold">
+                        @endif
+                        {{-- <div class="position-absolute property_cate sold">
                             Sold
-                        </div>
+                        </div> --}}
 
                         <img src="{{ asset(@$property->thumbnail->image) }}" class="property_image" width="100%">
                         <div class="properties_content">
                             <div class="property_type">
-                                Type: Apartment 
+                                Type: {{ $property->type }} 
                             </div>
                             <h5 class="title">{{ $property->title }}</h5>
                             <h5 class="price">$ {{ number_format($property->price, 2) }}</h5>
                             <!-- <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p> -->
                             <ul class="list-inline">
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/double-bed.png') }}" alt="Beds" class="m-0 d-inline-block"> 3</li>
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/bathroom.png') }}" alt="Baths" class="m-0 d-inline-block"> 3</li>
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/house-design.png') }}" alt="Area" class="m-0 d-inline-block"> 1,510 sqft</li>
+                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/double-bed.png') }}" alt="Beds" class="m-0 d-inline-block"> {{ $property->rooms }}</li>
+                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/bathroom.png') }}" alt="Baths" class="m-0 d-inline-block"> {{ $property->bathrooms }}</li>
+                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/house-design.png') }}" alt="Area" class="m-0 d-inline-block">{{ number_format($property->area) }} sqft</li>
                             </ul>
                         </div>
                     </a>

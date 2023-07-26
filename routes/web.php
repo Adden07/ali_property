@@ -218,7 +218,7 @@ Route::namespace('Frontend')->name('fronts.')->group(function(){
         Route::get('/vendor-signup', 'vendorSignupForm')->name('vendor_signup_form');
         Route::post('/vendor-signup', 'vendorSignup')->name('vendor_signup');
         Route::post('/agent-request', 'agentRequest')->name('agent_request');
-        Route::get('/properties', 'allProperties')->name('all_properties');
+        Route::get('/properties/{type?}', 'allProperties')->name('all_properties');
         Route::get('/property/{id}', 'property')->name('property');
         Route::get('/chat', 'chat')->name('chat')->middleware('auth:web');
         Route::get('/get-message', 'getMessages')->name('get_messages');

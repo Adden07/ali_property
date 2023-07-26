@@ -125,6 +125,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'per_page'  => env('PER_PAGE'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

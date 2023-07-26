@@ -45,11 +45,11 @@
 							<a class="nav-link" aria-current="page" href="javascript:void(0)">BUY</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="javascript:void(0)">SELL</a>
+							<a class="nav-link" href="{{ route('fronts.all_properties',['type'=>'sell']) }}">SELL</a>
 						</li>
 						
 						<li class="nav-item">
-							<a class="nav-link" href="javascript:void(0)">RENT</a>
+							<a class="nav-link" href="{{ route('fronts.all_properties',['type'=>'rent']) }}">RENT</a>
 						</li>
 
 						<li class="nav-item">
