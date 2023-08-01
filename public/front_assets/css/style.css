@@ -3,39 +3,48 @@
 }
 
 .banner{
-    background-image: url('../imgs/slider-img.png');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background-image: none !important;
+    background-color: #1e68bf !important;
+    padding-left: 35px !important;
+    padding-right: 35px !important;
+    padding-top: 0 !important;
+    padding-bottom: 50px !important;
 }
 
-.banner ul.nav-tabs {
+.banner h1{font-size: 25px;}
+
+.banner ul.nav-tabs{
     border-bottom: 0px !important;
-    width: 50% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 35px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: -40px;
 }
-.banner ul.nav-tabs .nav-link.active{color: #217EEB;font-weight: 600;}
-.banner ul.nav-tabs .nav-link{color: white;font-weight: 600;}
+.banner ul.nav-tabs .nav-link{color: white;font-weight: 600; background-color: #878787;border:0}
+.banner ul.nav-tabs .nav-link.active{color: #fff;font-weight: 600;background-color: #1e68bf;}
 .banner_main{background-image: url(../imgs/banner-bg.png);background-size: cover;background-repeat: no-repeat; padding-bottom: 50px;}
 .banner, .agents-banner, .become-agent{
+    background-color: #1e68bf;
     background-image: url(../imgs/banner-bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 160px 0 100px !important;
+    padding: 160px 0 100px;
     text-align: center;
     color: white;
 }
 
+.search-agent,
+form.search-property{width: 65%; margin: 0 auto;}
+
 form.search-property div, form.search-agent div{
     background-color: white;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0px 5px 5px 5px;
+    border-radius: 50px;
     padding: 6px 5px;
 }
+
+.search-agent button,
+.banner form.search-property button{padding: 9px 25px !important;border-radius: 50px !important;text-transform: uppercase;}
 
 .banner form.search-property select.form-select{
     /* display: inline-block;
@@ -48,9 +57,10 @@ form.search-property div, form.search-agent div{
     color: #333;
     background-color: transparent;
     border: 0px;
-    margin-left: 10px;
     margin-right: 10px;
     padding-top: 8px;
+    outline: none;
+    box-shadow: none;
 }
 
 .banner form.search-property input {

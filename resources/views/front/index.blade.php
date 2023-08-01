@@ -1,51 +1,62 @@
 @extends('front.layouts.master')
 @section('content')
-<div class="banner">
-    <div class="">
-        <h1>International Real Estate Platform</h1>
-        <p>Find properties in over 150+ different countries</p>
 
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#property" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Property</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#agent" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Agent</button>
-            </li>
-
-        </ul>
-
-
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane show active" id="property" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <form class="search-property" action="{{ route('fronts.all_properties') }}">
-                    <div class="input-group">
-                        <select class="form-select" name="property_type" aria-label="Default select example">
-                            <option selected>Type of Property</option>
-                            {!! get_property_types() !!}
-                        </select>
-                        
-                        <input type="text" name="city" placeholder="Enter City or country" class="form-control">
-
-                        <button class="btn" type="submit">Find</button>
-                    </div>
-                </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3604.9407195175736!2d68.35130741448798!3d25.373303180760875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x394c7034bbdd3f37%3A0x51c3c38ecd337dde!2sGexton%20Education%2C%203rd%20Floor%D8%8C%20Auto%20Bahn%20Road%2C%20Hyderabad!3m2!1d25.3751754!2d68.3505706!4m5!1s0x394c7061e83d2983%3A0x6714b1b7fdaa9c9c!2sGexton%20Rd%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%20Sindh%2071000%2C%20Pakistan!3m2!1d25.3719657!2d68.3531361!5e0!3m2!1sen!2s!4v1677841739325!5m2!1sen!2s" width="100%" height="450" style="border:0;margin-top: 95px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
+        </div>
 
-            <div class="tab-pane" id="agent" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                <form class="search-agent">
-                    <div class="input-group">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="banner">
+                    <div class="container">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#property" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" style="border-radius: 5px 0px 0px 0px;">Property</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#agent" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false" style="border-radius: 0px 5px 0px 0px;">Agent</button>
+                            </li>
+                        </ul>
 
-                        <input type="text" name="" placeholder="Enter Your Zip Code" class="form-control">
+                        <div class="tab-content mt-5" id="myTabContent">
+                            <div class="tab-pane show active" id="property" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                <form class="search-property" action="{{ route('fronts.all_properties') }}">
+                                    <div class="input-group">
+                                        <select class="form-select" name="property_type" aria-label="Default select example">
+                                            <option selected>Type of Property</option>
+                                            {!! get_property_types() !!}
+                                        </select>
 
-                        <button class="btn" type="submit">Find My Local Agent</button>
+                                        <input type="text" name="city" placeholder="Enter City or country" class="form-control">
+                                        <button class="btn" type="submit">Find</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane" id="agent" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <form class="search-agent">
+                                    <div class="input-group">
+
+                                        <input type="text" name="" placeholder="Enter Your Zip Code" class="form-control">
+
+                                        <button class="btn" type="submit">Find My Local Agent</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
     </div>
 </div>
+
 
 <section class="about-section mt-5">
     <div class="container">
@@ -61,11 +72,6 @@
             </div>
         </div>
     </div>
-</section>
-
-
-<section class="mt-5">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3604.9407195175736!2d68.35130741448798!3d25.373303180760875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x394c7034bbdd3f37%3A0x51c3c38ecd337dde!2sGexton%20Education%2C%203rd%20Floor%D8%8C%20Auto%20Bahn%20Road%2C%20Hyderabad!3m2!1d25.3751754!2d68.3505706!4m5!1s0x394c7061e83d2983%3A0x6714b1b7fdaa9c9c!2sGexton%20Rd%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%20Sindh%2071000%2C%20Pakistan!3m2!1d25.3719657!2d68.3531361!5e0!3m2!1sen!2s!4v1677841739325!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 
@@ -112,23 +118,21 @@
             {{-- @foreach($services->mergeRecursive($packages) AS $all)
             <div class="col-md-2 text-center">
                 <img src="{{ check_file($all->image) }}" height="100px" width="100px" class="rounded-circle">
-                <h5>{{ $all->service_name ?? $all->title }}</h5>
-                <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">23 listing</a>
-            </div>
-            @endforeach --}}
+            <h5>{{ $all->service_name ?? $all->title }}</h5>
+            <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">23 listing</a>
         </div>
+        @endforeach --}}
+    </div>
     </div>
 </section>
-{{-- 
+{{--
 <section class="property-sale">
     <div class="container">
-
         <div class="d-flex justify-content-between heading">
             <div>
                 <h3>Popular properties for sale around the world</h3>
                 <p>Explore some of the most popular properties for sale around the world</p>
             </div>
-
             <div><a href="javascript:void(0)" class="btn btn-primary">VIEW ALL</a></div>
         </div>
 
@@ -140,13 +144,13 @@
                             Rent
                         </div>
                         <img src="{{ check_file($property->image) }}" width="100%">
-                        <h5>{{ number_format($property->price, 2) }}</h5>
-                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-    </div>
+<h5>{{ number_format($property->price, 2) }}</h5>
+<p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
+</a>
+</div>
+@endforeach
+</div>
+</div>
 </section> --}}
 
 <section class="property-sale">
@@ -163,43 +167,43 @@
 
         <div class="properties-slider">
             @foreach($properties AS $property)
-                <div class="col-md-3 properties">
-                    <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none position-relative">
-                        @if($property->purpose == 'rent')
-                        <div class="position-absolute property_cate rent">
-                            Rent
-                        </div>
-                        @else 
-                        <div class="position-absolute property_cate buy">
-                            Sell
-                        </div>
-                        @endif
-                        {{-- <div class="position-absolute property_cate sold">
+            <div class="col-md-3 properties">
+                <a href="{{ route('fronts.property', ['id'=>$property->hashid]) }}" class="text-decoration-none position-relative">
+                    @if($property->purpose == 'rent')
+                    <div class="position-absolute property_cate rent">
+                        Rent
+                    </div>
+                    @else
+                    <div class="position-absolute property_cate buy">
+                        Sell
+                    </div>
+                    @endif
+                    {{-- <div class="position-absolute property_cate sold">
                             Sold
                         </div> --}}
 
-                        <img src="{{ asset(@$property->thumbnail->image) }}" class="property_image" width="100%">
-                        <div class="properties_content">
-                            <div class="property_type">
-                                Type: {{ $property->type }} 
-                            </div>
-                            <h5 class="title">{{ $property->title }}</h5>
-                            <h5 class="price">$ {{ number_format($property->price, 2) }}</h5>
-                            <!-- <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p> -->
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/double-bed.png') }}" alt="Beds" class="m-0 d-inline-block"> {{ $property->rooms }}</li>
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/bathroom.png') }}" alt="Baths" class="m-0 d-inline-block"> {{ $property->bathrooms }}</li>
-                                <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/house-design.png') }}" alt="Area" class="m-0 d-inline-block">{{ number_format($property->area) }} sqft</li>
-                            </ul>
+                    <img src="{{ asset(@$property->thumbnail->image) }}" class="property_image" width="100%">
+                    <div class="properties_content">
+                        <div class="property_type">
+                            Type: {{ $property->type }}
                         </div>
-                    </a>
-                </div>
+                        <h5 class="title">{{ $property->title }}</h5>
+                        <h5 class="price">$ {{ number_format($property->price, 2) }}</h5>
+                        <!-- <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p> -->
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/double-bed.png') }}" alt="Beds" class="m-0 d-inline-block"> {{ $property->rooms }}</li>
+                            <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/bathroom.png') }}" alt="Baths" class="m-0 d-inline-block"> {{ $property->bathrooms }}</li>
+                            <li class="list-inline-item"><img src="{{ asset('front_assets/imgs/house-design.png') }}" alt="Area" class="m-0 d-inline-block">{{ number_format($property->area) }} sqft</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
             @endforeach
         </div>
     </div>
 </section>
 
-<section class="agents-banner mt-5">
+<!-- <section class="agents-banner mt-5">
     <div class="container">
         <h1 class="text-white">We are dedicated to helping agents build successful
             real estate careers. We help agents develop a plan, build a database and work smarter to uncover keys to success as a real estate agent.</h1>
@@ -329,7 +333,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="become-agent">
@@ -344,22 +348,22 @@
         <h3 class="text-center">Frequently Asked Questions</h3>
         <div class="row">
             @foreach($faqs AS $faq)
-                <div class="col-md-6">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    {{ $faq->question }}
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    {!! $faq->answer !!}
-                                </div>
+            <div class="col-md-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                {{ $faq->question }}
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {!! $faq->answer !!}
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
