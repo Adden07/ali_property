@@ -1,6 +1,4 @@
-*{
-    font-family: 'Inter';
-}
+*{font-family: 'Inter';}
 
 .banner{
     background-image: none !important;
@@ -12,7 +10,6 @@
 }
 
 .banner h1{font-size: 25px;}
-
 .banner ul.nav-tabs{
     border-bottom: 0px !important;
     width: 20%;
@@ -113,16 +110,13 @@ form.search-property div, form.search-agent div{
 }
 
 .breadcrumb-main{background-size: cover;background-attachment: fixed;background-position: center;}
-
 .it_solutions{background-image: url('../imgs/it-solback.jpg');}
 .travel_tourisam{background-image: url('../imgs/travel-tourism.png');}
 .nav_top{background-color: rgba(0, 0, 0, 0.9);}
 .nav_main{transition: 0.5s; background-color: #fff;box-shadow: 5px 2px 5px #d4d4d4;}
 .nav_main nav{padding: 20px 0px;;}
 /* .nav_main nav .navbar-brand{color: #217EEB;} */
-
 .nav_main nav .navbar-nav .nav-item{margin: 0 13px}
-
 .nav_main nav .navbar-nav .nav-link{
     color: #000;
     font-weight: 500;
@@ -139,7 +133,6 @@ form.search-property div, form.search-agent div{
 }
 
 .signup_btn{padding: 10px 30px 10px 15px;}
-
 .btn.country-select {
     padding: 7px 10px;
     border-radius: 5px;
@@ -172,11 +165,8 @@ form.search-property div, form.search-agent div{
 }
 
 .support_breadcrumb{font-size: 60px; font-weight: 700}
-
 .support_breadcrumbmain .status{border-radius: 20px; margin-bottom: 40px;font-size: 16px; font-weight: 700;display: flex;align-items: center;}
 .support_breadcrumbmain .status i{font-size: 35px; margin-right: 10px;}
-
-
 .dropdown-toggle::after{
     content: url('../imgs/dropdown-icon.png') !important;
     border: 0px !important;
@@ -771,12 +761,9 @@ form.search-property div, form.search-agent div{
     padding: 10px 15px;
 }
 
-.custom-dropdown .dropdown-item:hover{
-    background-color: #217EEB;
-    color: #fff;
-}
+.custom-dropdown .dropdown-item:hover{background-color: #217EEB;color: #fff;}
 
-.custom-dropdown .dropdown-menu {
+.custom-dropdown .dropdown-menu{
     padding: 0px;
     border: 1px solid transparent;
     -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
@@ -820,12 +807,11 @@ form.search-property div, form.search-agent div{
 }
 
 .text{text-align: center; color: #fff;margin-top: 10px}
-
-.spinner {
-      margin-left: auto;
+.spinner{
+    margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
- width: 48px;
+    width: 48px;
     height: 48px;
     border: 5px solid #FFF;
     border-bottom-color: transparent;
@@ -869,11 +855,7 @@ form.search-property div, form.search-agent div{
 .download-section form{position: relative;}
 /* .download-section form{display: inline-block;} */
 .download-section form input{height: 50px; border-radius: 20px; float: left; width: calc(100% - 150px);}
-.download-section form button{padding: 7px 25px;
-background-color: #fff;
-height: 50px;
-border-radius: 20px;
-margin-left: 3px;}
+.download-section form button{padding: 7px 25px;background-color: #fff;height: 50px;border-radius: 20px;margin-left: 3px;}
 
 
 .variation_container{
@@ -884,10 +866,7 @@ margin-left: 3px;}
 }
   
 /* Hide the browser's default radio button */
-.variation_container input {
-    position: absolute;
-    opacity: 0;
-}
+.variation_container input{position: absolute;opacity: 0;}
 
 /* Create a custom radio button */
 .checkmark{
@@ -901,23 +880,11 @@ margin-left: 3px;}
 
 
 /* When the radio button is checked, add a blue background */
-.variation_container input:checked ~ .checkmark{
-    background-color: #217EEB;
-    color: #fff;
-    border-color: #217EEB;
-}
-
-
+.variation_container input:checked ~ .checkmark{background-color: #217EEB;color: #fff;border-color: #217EEB;}
 .variation_container input[type="radio"]:disabled ~ .checkmark,
-.variation_container input[type="checkbox"]:disabled ~ .checkmark{
-    /* background-color: #d7d7d7; */
-    color: #a8a8a8;
-}
-
-
+.variation_container input[type="checkbox"]:disabled ~ .checkmark{/* background-color: #d7d7d7; */ color: #a8a8a8;}
 .check_availability{border-radius: 10px;}
 .check_availability:before{font-family: "Font Awesome 6 Free"; content: "\f073"; padding-right: 5px;}
-
 .featured_homeservices .positions img{border-radius: 20px 20px 0 0;}
 .fixed_sidebar{position: sticky; top: 110px;}
 .average_reviews small{color: #757575;font-size: 18px;}
@@ -947,14 +914,8 @@ margin-left: 3px;}
 .all_testimonials .testimonials_images img{width: 125px; height: 125px;}
 .positions .content_home .home_rating{font-size: 14px;color: #757575}
 .positions .content_home .home_rating .mid_dote{color: #757575;font-size: 5px;position: relative;top: -3px; margin: 0 3px;}
-
 .price_home span{ font-size: 16px !important;font-weight: 400 !important;color: #757575;}
-
-
-.account-tabs .nav li button.btn:focus{
-    box-shadow: unset;
-
-}
+.account-tabs .nav li button.btn:focus{box-shadow: unset;}
 .account-tabs .nav li button,
 .account-tabs .nav li a{
     font-size: 18px;
@@ -963,24 +924,15 @@ margin-left: 3px;}
     width: 100%;
     text-align: left;
 }
-.account-tabs{
-    border-right: 2px solid #217EEB;
-    /* margin-left: 10px; */
-}
+.account-tabs{border-right: 2px solid #217EEB;/* margin-left: 10px; */}
 .account-tabs .nav .nav-link.active{
     color: white;
     background-color: #217EEB;
     border-radius: 0px;
     font-weight: 700;
 }
-.tab-content #booking table tbody tr{
-    padding: 10px 0;
-}
-.table > :not(caption) > * > *{
-    padding: 18px 0px !important;
-}
-
-
+.tab-content #booking table tbody tr{padding: 10px 0;}
+.table > :not(caption) > * > *{padding: 18px 0px !important;}
 .additional_details ul li span{font-weight: bold;}
 .btm_tabs li a{padding: 13px 15px;font-weight: bold;background-color: #dddddd !important; color: #000;}
 .btm_tabs li a.active{background-color: #fff !important;}
@@ -1221,26 +1173,12 @@ margin-left: 3px;}
     padding-right: 0;
 }
   
-  .header-chat {
-    background-color: #FFF;
-    height: 90px;
-    box-shadow: 0px 3px 2px rgba(0,0,0,0.100);
-    display:flex;
-    align-items: center;
-  }
-  
-/* .chat .header-chat .icon {
-margin-left: 30px;
-color:#515151;
-font-size: 14pt;
-} */
-  
+.header-chat{background-color: #FFF;height: 90px;box-shadow: 0px 3px 2px rgba(0,0,0,0.100);display:flex;align-items: center;}
+
+/* .chat .header-chat .icon{margin-left: 30px;color:#515151;font-size: 14pt;}*/
 .chat .header-chat .name{margin: 0 0 0 20px; text-transform: uppercase;font-size: 13pt; color:#515151;}
-
 /* .chat .header-chat .right{position: absolute;right: 40px;} */
-  
 .chat .messages-chat{padding: 25px 35px;max-height: 530px;overflow: auto;border-top: 1px solid #d4d4d4}
-
 
 /* width */
 .chat .messages-chat::-webkit-scrollbar{width: 10px;}
@@ -1267,7 +1205,7 @@ font-size: 14pt;
     background-size: cover;
     background-repeat: no-repeat;
 }
-  
+
 .chat .messages-chat .text{
 /* margin: 0 35px; */
 background-color: #f6f6f6;
@@ -1275,27 +1213,10 @@ padding: 15px;
 border-radius: 12px;
 color: #000;
 }
-  
 .text-only{margin-left: 45px;}
-
-.time {
-font-size: 10px;
-color:lightgrey;
-margin-bottom:10px;
-margin-left: 85px;
-}
-
-.response-time {
-float: right;
-margin-right: 40px !important;
-}
-
-.response {
-float: right;
-margin-right: 0px !important;
-margin-left:auto; /* flexbox alignment rule */
-}
-  
+.time{font-size: 10px;color:lightgrey;margin-bottom:10px;margin-left: 85px;}
+.response-time{float: right;margin-right: 40px !important;}
+.response{float: right;margin-right: 0px !important;margin-left:auto; /* flexbox alignment rule */}
 .response .text{background-color: #e3effd !important;}
   
 .footer-chat{
@@ -1340,7 +1261,7 @@ margin-left:auto; /* flexbox alignment rule */
     padding: 10px;
     padding-right: 75px;
 }
-  
+
 .footer-chat *::-webkit-input-placeholder{color: #C0C0C0;font-size: 13pt;}
 .footer-chat input *:-moz-placeholder{color: #C0C0C0;font-size: 13pt;}
 .footer-chat input *::-moz-placeholder{color: #C0C0C0;font-size: 13pt;margin-left:5px;}
@@ -1348,6 +1269,22 @@ margin-left:auto; /* flexbox alignment rule */
 .clickable{cursor: pointer;}
 
 /* End Chat Css */
+
+
+.agents_search{width: 65%;margin: 0 auto;}
+.agents_search select{border-radius: 100px 0px 0px 100px;padding: 12px 20px;}
+.agents_search input{border-radius: 0px 100px 100px 0px;padding: 12px 20px;}
+.agents_search .search_btn{background-color: #217EEB;text-transform: uppercase;color: #fff;font-weight: bold;padding: 10px 40px;border-radius: 100px;}
+.agent_listing .agents{margin-bottom: 30px;}
+.agent_listing h3{font-weight: bold;font-size: 28px;}
+.agent_listing .agents{border: 1px solid #DDDDDD; border-radius: 20px;padding: 10px 15px;}
+.agent_listing .agents h5{color: #000000; font-size: 20px;font-weight: bold;margin-top: 10px;}
+.agent_listing .agents p{color: #333333;font-size: 16px;}
+.agent_listing .agents .buttons a{display: block;background-color: #217EEB;color: #fff;margin-bottom: 10px;text-decoration: none;font-size: 14px;padding: 13px 5px;font-weight: bold;border-radius: 5px;transition: 0.5s; border: 1px solid transparent}
+.agent_listing .agents .buttons a.profile{background-color: transparent;border-color: #217EEB;color: #217EEB;}
+.agent_listing .agents .buttons a.profile:hover{background-color: #217EEB;color: #fff;}
+.agent_listing .agents .buttons a.message:hover{background-color: transparent;color: #217EEB;border-color: #217EEB;}
+
 
 
 .property_cate{font-weight: bold;left: 10px;top: 10px;color: #fff;padding: 4px 12px;border-radius: 5px;font-size: 16px;}
