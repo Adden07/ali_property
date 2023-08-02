@@ -1,11 +1,20 @@
 @extends('front.layouts.master')
+<style>
+ #map {
+    height: 500px;
+  }
+    </style>
 @section('content')
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3604.9407195175736!2d68.35130741448798!3d25.373303180760875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x394c7034bbdd3f37%3A0x51c3c38ecd337dde!2sGexton%20Education%2C%203rd%20Floor%D8%8C%20Auto%20Bahn%20Road%2C%20Hyderabad!3m2!1d25.3751754!2d68.3505706!4m5!1s0x394c7061e83d2983%3A0x6714b1b7fdaa9c9c!2sGexton%20Rd%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%20Sindh%2071000%2C%20Pakistan!3m2!1d25.3719657!2d68.3531361!5e0!3m2!1sen!2s!4v1677841739325!5m2!1sen!2s" width="100%" height="450" style="border:0;margin-top: 95px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3604.9407195175736!2d68.35130741448798!3d25.373303180760875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x394c7034bbdd3f37%3A0x51c3c38ecd337dde!2sGexton%20Education%2C%203rd%20Floor%D8%8C%20Auto%20Bahn%20Road%2C%20Hyderabad!3m2!1d25.3751754!2d68.3505706!4m5!1s0x394c7061e83d2983%3A0x6714b1b7fdaa9c9c!2sGexton%20Rd%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%20Sindh%2071000%2C%20Pakistan!3m2!1d25.3719657!2d68.3531361!5e0!3m2!1sen!2s!4v1677841739325!5m2!1sen!2s" width="100%" height="450" style="border:0;margin-top: 95px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+                <div id="map"></div>
+
+
             </div>
         </div>
 
@@ -13,7 +22,7 @@
             <div class="row">
                 <div class="banner">
                     <div class="container">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="position: relative;z-index: 99999999;">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#property" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" style="border-radius: 5px 0px 0px 0px;">Property</button>
                             </li>
@@ -404,5 +413,72 @@
         </div>
     </div>
 </section>
+
+@endsection
+
+@section('script')
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+<script  src="https://maps.googleapis.com/maps/api/js?key={{config('app.map_key')}}">
+    </script>
+<script>
+var mapDiv;
+let position = {coords:{latitude:'',longitude:''}};
+function initMap(position) {
+  mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+  	center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+    zoom: 12,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}] // "Subtle Grayscale" style found on snazzymaps.com
+
+	});
+ //[53.34449219138831, -6.259396073702419]
+  var markerCoords = [];
+  var markers = [];
+  var marker;
+  for (var i = 0, len = markerCoords.length; i < len; i++){
+    marker = new google.maps.Marker({position: new google.maps.LatLng(markerCoords[i][0], markerCoords[i][1])});
+    markers.push(marker);
+  }
+  var markerCluster = new MarkerClusterer(map, markers,{imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+}
+
+$( document ).ready(function() {
+    getLocation();
+    function getLocation() {
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition,showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+  initMap(position);
+   get_location(function(data){
+         getlisting(data);
+    })
+}
+function showError(error) {
+    get_location(function(data){
+         position.coords.latitude  = data.latitude;
+         position.coords.longitude = data.longitude;
+         initMap(position);
+         getlisting(data);
+    })
+}
+});
+function getlisting(data){
+    console.log(data);
+}
+function get_location(callback){
+    $.getJSON('https://json.geoiplookup.io/?callback=?', function(data) {
+        callback(data);
+    });
+}
+// initMap();
+</script>
 
 @endsection

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @hasSection('title')
-        <meta name="title" content="@yield('title') | Shipit4us" />
-        <title> @yield('title') | Shipit4us</title>
+        <meta name="title" content="@yield('title') | Ali Property" />
+        <title> @yield('title') | Ali Property</title>
     @else
         <meta name="title" content="{{ $title ?? 'The Transport Marketplace | Get Delivery Quotes | LTL/FTL & Freight Instant Rate | Shipit4us'}}" />
         <title> {{ $title ?? 'The Transport Marketplace | Get Delivery Quotes | LTL/FTL & Freight Instant Rate'}}  | Shipit4us</title>
@@ -61,7 +61,7 @@
           ]
         }
     </script>
-    
+
     @if (config('app.enable_analytics_chatting') == true)
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BPL5NVZRHG"></script>
         <script>

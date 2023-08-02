@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\URL;
 
 class UserLoginController extends Controller
-{   
+{
     public function __construct(){
         $this->middleware('guest:web', ['loginForm', 'registrationForm', 'registration', 'login' ])->except(['logout', 'updateDetails']);
     }
@@ -34,7 +34,7 @@ class UserLoginController extends Controller
         );
         return view('user.registration')->with($data);
     }
-    
+
 
     public function registration(UserRegisgtrationRequest $req){//registe user
 
@@ -47,8 +47,8 @@ class UserLoginController extends Controller
         // $url             = URL::temporarySignedRoute(
         //                         'users.email_verification', now()->addMinutes(30), ['email' => $user->email]
         //                     );
-        
-        Mail::to($user->email)->send(new UserRegistrationMail('', $user->full_name));//send email verification link to user
+
+        //Mail::to($user->email)->send(new UserRegistrationMail('', $user->full_name));//send email verification link to user
 
         return response()->json([
             'success'   => 'You have registered successfully',
@@ -76,7 +76,7 @@ class UserLoginController extends Controller
             dd('done');
         }else{
             dd('error');
-        }        
+        }
     }
 
     public function forgetPassword(){//forget password form
@@ -101,7 +101,7 @@ class UserLoginController extends Controller
             'reload'    => true
         ]);
     }
-    
+
 
     public function resetPasswordForm(){
         $data = array(
@@ -111,7 +111,7 @@ class UserLoginController extends Controller
     }
 
     public function resetPassword(Request $req, $user_id){//rest user password form
-       
+
         $req->validate([
             'password'  => ['required', 'min:8', 'confirmed']
         ]);

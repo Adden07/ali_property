@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
@@ -53,14 +53,14 @@
 
                         <div class="col-md-12">
                             <a href="#" class="btn btn-success">Data Room Documents</a>
-                            <a href="#" class="btn btn-danger">Register to offer</a>
+                            {{-- <a href="#" class="btn btn-danger">Register to offer</a> --}}
                         </div>
 
                     </div>
                 </div>
             </div>
         </div>
-      
+
     </div>
 </section>
 
@@ -225,7 +225,7 @@
 </section>
 
 
-{{-- 
+{{--
 <section>
     <div class="container-fluid p0">
         <div class="container">

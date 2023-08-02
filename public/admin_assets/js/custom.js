@@ -2,7 +2,7 @@ function toast(msg, title, type, timer){
     var opts = {
         title: title,
         html: msg,
-        type: type,
+        icon: type,
         confirmButtonClass: "btn btn-confirm mt-2"
     };
     if(timer !== undefined){
@@ -32,7 +32,7 @@ function initAjaxForm() {
             page_loader('show');
 
             // $("button[type=submit]").attr("disabled", 'disabled').html(disabled_btn);
-            
+
             if ($("form.ajaxForm").hasClass('popup')) {
                 r = confirm("Are you sure?");
                 if (!r) {
@@ -41,7 +41,7 @@ function initAjaxForm() {
                     return false;
                 }
             }
-            
+
         },
         complete: function () {
             page_loader('hide');
@@ -55,7 +55,7 @@ function initAjaxForm() {
             $("button[type=submit]").removeAttr("disabled").html(submit_btn);
 
             var timer = data['redirect_timer'] !== undefined ? data['redirect_timer'] : 2000;
-            
+
             if (data['error'] !== undefined) {
                 toast(data['error'], "Error!", 'error');
             } else if (data['success'] !== undefined) {
@@ -109,7 +109,7 @@ function ajaxRequest(_self) {
         Swal.fire({
             title: "Are you sure?",
             text: (data_msg && data_msg != '') ? data_msg : "You won't be able to revert this!",
-            type: "warning",
+            icon: "warning",
             showCancelButton: !0,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
@@ -149,7 +149,7 @@ function run_ajax(href, ele){
                 multiple_errors_ajax_handling(data['errors']);
             }
 
-           
+
             if (data['redirect'] !== undefined) {
                 setTimeout(function () {
                     if(data['new_tab']!== undefined){
@@ -157,10 +157,10 @@ function run_ajax(href, ele){
                         return false;
                     }
                     window.location = data['redirect'];
-                    
+
                 }, 400);
             }
-             
+
             if (data['reload'] !== undefined) {
                 setTimeout(function () {
                     window.location.reload(true);
@@ -275,7 +275,7 @@ function logout(e){
     Swal.fire({
         title: "Are you sure?",
         text: "By this action you will be logged out are you sure you want to continue!",
-        type: "warning",
+        icon: "warning",
         showCancelButton: !0,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -292,7 +292,7 @@ function adminClearNotifications(e){
     Swal.fire({
         title: "Are you sure?",
         text: "By this action you will be logged out are you sure you want to continue!",
-        type: "warning",
+        icon: "warning",
         showCancelButton: !0,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -309,7 +309,7 @@ $(document).ready(function () {
     initAjaxForm();
 
     $(".custom_form").parsley();
-    
+
     if ($('[data-toggle="select2"]').length > 0) {
         $('[data-toggle="select2"]').select2()
     }
@@ -324,8 +324,8 @@ $(document).ready(function () {
             else $(obj).mask(maskFormat);
         });
     }
-    
-    
+
+
 });
 
 
@@ -372,7 +372,7 @@ if ($('.human_monthpicker').length > 0) {
             })
         ]
     });
-    
+
 }
 
 function timeSince(date) {
@@ -415,7 +415,7 @@ function bookmark_property(ele, reload = false) {
 
     getAjaxRequests(url, params, 'post', function (data) {
         if (data['success'] !== undefined) {
-            
+
             if (data['added'] !== undefined) {
                 $(ele).removeClass('btn-success').addClass('btn-danger').data('action', 'remove').text('Remove from bookmark');
             } else {
@@ -449,7 +449,7 @@ function formatMoney(number, decPlaces, decSep, thouSep) {
     var sign = number < 0 ? "-" : "";
     var i = String(parseInt(number = Math.abs(Number(number) || 0).toFixed(decPlaces)));
     var j = (j = i.length) > 3 ? j % 3 : 0;
-    
+
     return sign +
         (j ? i.substr(0, j) + thouSep : "") +
         i.substr(j).replace(/(\decSep{3})(?=\decSep)/g, "$1" + thouSep) +

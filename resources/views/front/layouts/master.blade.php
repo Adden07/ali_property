@@ -47,7 +47,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('fronts.all_properties',['type'=>'sell']) }}">SELL</a>
 						</li>
-						
+
 						<li class="nav-item">
 							<a class="nav-link" href="{{ route('fronts.all_properties',['type'=>'rent']) }}">RENT</a>
 						</li>
@@ -80,9 +80,9 @@
 							</div>
 						@endauth
 					</div>
-					<button class="btn country-select "><img src="{{ asset('front_assets/imgs/united-states.png') }}" class="me-2">USA</button>
+					{{-- <button class="btn country-select "><img src="{{ asset('front_assets/imgs/united-states.png') }}" class="me-2">USA</button> --}}
 
-					
+
 				</div>
 			</nav>
 		</div>
@@ -199,7 +199,7 @@
 	<script src="{{ asset('front_assets/js/slick.min.js') }}"></script>
 	<!-- <script src="{{ asset('front_assets/js/owl.carousel.min.js') }}"></script> -->
 	<script src="{{ asset('front_assets/js/main.js') }}"></script>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

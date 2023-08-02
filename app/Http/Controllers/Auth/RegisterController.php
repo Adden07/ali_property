@@ -72,20 +72,7 @@ class RegisterController extends Controller
             'email.unique' => 'The Email is already used by another Provider.'
         );
 
-        if(in_array($request->user_type, ['carrier', 'broker'])){
-            $rules['dot_no'] = ['required', 'string', 'unique:user_details'];
-            $err_msgs['dot_no.unique'] = 'The DOT Number is already used by another Provider.';
-        }
 
-        if ($request->user_type == 'independent_driver') {
-            $rules['cdl'] = ['required', 'string', 'unique:user_details'];
-            $err_msgs['cdl.unique'] = 'The CDL is already used by another Provider.';
-        }
-
-        if ($request->user_type == 'broker') {
-            $rules['mc_no'] = ['required', 'string', 'unique:user_details'];
-            $err_msgs['mc_no.unique'] = 'The MC Number is already used by another Provider.';
-        }
 
         $validator = Validator::make($request->all(), $rules, $err_msgs);
         if($validator->fails()){
@@ -94,7 +81,7 @@ class RegisterController extends Controller
             ]);
         }
 
-        event(new Registered($user = $this->create($request->all())));
+        // event(new Registered($user = $this->create($request->all())));
 
         $this->guard()->login($user);
 
@@ -205,7 +192,7 @@ class RegisterController extends Controller
     {
         return response()->json([
             'success' => 'Your account has been successfully created.',// but you still need to verify you email',
-            'redirect' => (session()->get('last_url')) ??  route('front.home')
+            'redirect' =>  route('front.home')
         ]);
     }
 }
