@@ -8,9 +8,6 @@
     </div>
 </div>
 
-
-
-
 <div class="container my-5">
     <div class="row">
         <div class="col-md-3">
@@ -50,7 +47,29 @@
                 </div>
 
                 <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-                    <table class="table">
+
+                    <div class="col-md-12 mb-5">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <select class="form-select" id="inputGroupSelect01">
+                                        <option selected>All</option>
+                                        <option value="1">Rent</option>
+                                        <option value="2">Sell</option>
+                                        <option value="3">Sold Out</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <a href="#" class="btn btn-primary">Add Property</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table mt-4" id="myTable">
                         <thead>
                             <tr>
                                 <th>Sr</th>
@@ -61,13 +80,13 @@
                         </thead>
                         <tbody>
                             @foreach($bookings AS $booking)
-                                <tr>
-                                    <th>{{ $booking->booking_id }}</th>
-                                    <td>{{ date('d-M-Y', strtotime($booking->travel_date)) }}</td>
-                                    <td>{!! get_status($booking->status) !!}</td>
-                                    <td>AED {{ number_format($booking->total_amount, 2) }}</td>
-                                    <td><a href="#" class="btn btn-theme">View</a></td>
-                                </tr>
+                            <tr>
+                                <th>{{ $booking->booking_id }}</th>
+                                <td>{{ date('d-M-Y', strtotime($booking->travel_date)) }}</td>
+                                <td>{!! get_status($booking->status) !!}</td>
+                                <td>AED {{ number_format($booking->total_amount, 2) }}</td>
+                                <td><a href="#" class="btn btn-theme">View</a></td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -126,13 +145,14 @@
                         </thead>
                         <tbody>
                             @foreach($wishlists AS $wishlist)
-                                <tr>
-                                    <th scope="row">{{ $wishlist->package->title }}</th>
-                                    <td>AED {{ collect($wishlist->package->infant, $wishlist->package->child, $wishlist->package->adult)->min() ?? 500 }}</td>
-                                    <td>
-                                        {{-- <button type="button" class="btn btn-theme w-30">Add to cart</button> --}}
-                                        <button type="button" class="btn btn-danger w-30 ms-2" data-id="{{ $wishlist->hashid }}" onclick="remove_wishlist(this)">Remove</button></td>
-                                </tr>
+                            <tr>
+                                <th scope="row">{{ $wishlist->package->title }}</th>
+                                <td>AED {{ collect($wishlist->package->infant, $wishlist->package->child, $wishlist->package->adult)->min() ?? 500 }}</td>
+                                <td>
+                                    {{-- <button type="button" class="btn btn-theme w-30">Add to cart</button> --}}
+                                    <button type="button" class="btn btn-danger w-30 ms-2" data-id="{{ $wishlist->hashid }}" onclick="remove_wishlist(this)">Remove</button>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -143,17 +163,24 @@
 </div>
 @endsection
 @section('script')
-    <script>
-        function remove_wishlist(_self){
-            var id = $(_self).data('id');
-            var route = "{{ route('users.remove_wishlist', ':id') }}";
-            route     = route.replace(':id', id);
 
-            getAjaxRequests(route, '', 'GET', function(resp){
-                if(resp.success){
-                    $(_self).parent().parent().remove();
-                }
-            });
-        }
-    </script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+<script>
+    let table = new DataTable('#myTable');
+
+    function remove_wishlist(_self) {
+        var id = $(_self).data('id');
+        var route = "{{ route('users.remove_wishlist', ':id') }}";
+        route = route.replace(':id', id);
+
+        getAjaxRequests(route, '', 'GET', function(resp) {
+            if (resp.success) {
+                $(_self).parent().parent().remove();
+            }
+        });
+    }
+</script>
 @endsection
