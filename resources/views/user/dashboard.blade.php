@@ -3,8 +3,8 @@
 
 <div class="col-12">
     <div class="text-center breadcrumb-main it_solutions">
-        <h1 class="text-white fw-bold">Order</h1>
-        <p class="text-white">Lorem Ipsum</p>
+        <h1 class="text-white fw-bold">Dashboard</h1>
+        {{-- <p class="text-white">Lorem Ipsum</p> --}}
     </div>
 </div>
 
@@ -20,7 +20,8 @@
                         <button class="nav-link btn active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button" role="tab" aria-controls="home" aria-selected="true">Dashboard</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link btn" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" type="button" role="tab" aria-controls="profile" aria-selected="false">Booking</button>
+                        <button class="nav-link btn" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" type="button" role="tab" aria-controls="profile" aria-selected="false"> Properties
+                        </button>
                     </li>
                     <li class="nav-item">
                         <button class="nav-link btn" id="account-tab" data-bs-toggle="tab" data-bs-target="#account" type="button" role="tab" aria-controls="contact" aria-selected="false">Account Details</button>
@@ -43,7 +44,7 @@
                 <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
 
                     <div>
-                        <h3>Welcome! User</h3>
+                        <h3>Welcome! {{auth('web')->user()->full_name}}</h3>
                     </div>
 
                 </div>
@@ -52,10 +53,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Booking Id</th>
+                                <th>Sr</th>
                                 <th>Date</th>
                                 <th>Status</th>
-                                <th>Total</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
