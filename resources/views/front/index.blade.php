@@ -12,8 +12,7 @@
             <div class="row">
 
                 {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3604.9407195175736!2d68.35130741448798!3d25.373303180760875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x394c7034bbdd3f37%3A0x51c3c38ecd337dde!2sGexton%20Education%2C%203rd%20Floor%D8%8C%20Auto%20Bahn%20Road%2C%20Hyderabad!3m2!1d25.3751754!2d68.3505706!4m5!1s0x394c7061e83d2983%3A0x6714b1b7fdaa9c9c!2sGexton%20Rd%2C%20Latifabad%20Unit%207%20Latifabad%2C%20Hyderabad%2C%20Sindh%2071000%2C%20Pakistan!3m2!1d25.3719657!2d68.3531361!5e0!3m2!1sen!2s!4v1677841739325!5m2!1sen!2s" width="100%" height="450" style="border:0;margin-top: 95px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-                <div id="map"></div>
-
+                <div id="map" style="margin-top: 95px"></div>
 
             </div>
         </div>
@@ -22,7 +21,7 @@
             <div class="row">
                 <div class="banner">
                     <div class="container">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="position: relative;z-index: 99999999;">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" style="position: relative;z-index: 99;">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#property" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" style="border-radius: 5px 0px 0px 0px;">Property</button>
                             </li>
@@ -65,102 +64,6 @@
 
     </div>
 </div>
-
-
-<section class="about-section mt-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Ali Property Advisors is your international assistant in buying and selling real estate!
-                </h2>
-                <a href="javascript:void(0)" class="btn btn-primary">ABOUT</a>
-            </div>
-
-            <div class="col-md-6">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="category">
-    <div class="container">
-        <div class="text-center">
-            <h3>Explore overseas property in popular areas</h3>
-
-            <a href="javascript:void(0)" class="text-decoration-none">
-                <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Explore all 117 countries and regions</p>
-            </a>
-        </div>
-
-        <!--
-        <div class="row categories align-items-center mb-5 pb-3">
-
-            <div class="col-md-6 type">
-                <div class="main-cat" style="background: url( {{ asset('front_assets/imgs/home-bgtravel.png') }} ) no-repeat;">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-3">
-                            <h5>Travel & Tourism</h5>
-                            <p class="mb-5">Choose the deals that suit you the best.</p>
-                            <a href="{{ route('fronts.travel_tourisam') }}" class="btn btn-white">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 type">
-                <div class="main-cat" style="background: url( {{ asset('front_assets/imgs/home-itsol.png') }} ) no-repeat;">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-3">
-                            <h5>IT Solutions</h5>
-                            <p class="mb-5">Best In Class IT deals and packages!</p>
-                            <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
-
-        <div class="row services my-4 mt-5">
-            {{-- @foreach($services->mergeRecursive($packages) AS $all)
-            <div class="col-md-2 text-center">
-                <img src="{{ check_file($all->image) }}" height="100px" width="100px" class="rounded-circle">
-            <h5>{{ $all->service_name ?? $all->title }}</h5>
-            <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">23 listing</a>
-        </div>
-        @endforeach --}}
-    </div>
-    </div>
-</section>
-{{--
-<section class="property-sale">
-    <div class="container">
-        <div class="d-flex justify-content-between heading">
-            <div>
-                <h3>Popular properties for sale around the world</h3>
-                <p>Explore some of the most popular properties for sale around the world</p>
-            </div>
-            <div><a href="javascript:void(0)" class="btn btn-primary">VIEW ALL</a></div>
-        </div>
-
-        <div class="properties-slider">
-            @foreach($properties AS $property)
-                <div class="col-md-3 properties">
-                    <a href="javascript:void(0)" class="text-decoration-none">
-                        <div class="badge rent">
-                            Rent
-                        </div>
-                        <img src="{{ check_file($property->image) }}" width="100%">
-<h5>{{ number_format($property->price, 2) }}</h5>
-<p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
-</a>
-</div>
-@endforeach
-</div>
-</div>
-</section> --}}
 
 <section class="property-sale">
     <div class="container">
@@ -211,6 +114,102 @@
         </div>
     </div>
 </section>
+
+<section class="category mt-5">
+    <div class="container">
+        <div class="text-center">
+            <h3>Explore overseas property in popular areas</h3>
+
+            <a href="javascript:void(0)" class="text-decoration-none">
+                <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="me-2">Explore all 117 countries and regions</p>
+            </a>
+        </div>
+
+        <!--
+        <div class="row categories align-items-center mb-5 pb-3">
+
+            <div class="col-md-6 type">
+                <div class="main-cat" style="background: url( {{ asset('front_assets/imgs/home-bgtravel.png') }} ) no-repeat;">
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <h5>Travel & Tourism</h5>
+                            <p class="mb-5">Choose the deals that suit you the best.</p>
+                            <a href="{{ route('fronts.travel_tourisam') }}" class="btn btn-white">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 type">
+                <div class="main-cat" style="background: url( {{ asset('front_assets/imgs/home-itsol.png') }} ) no-repeat;">
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <h5>IT Solutions</h5>
+                            <p class="mb-5">Best In Class IT deals and packages!</p>
+                            <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+
+        <div class="row services my-4 mt-5">
+            {{-- @foreach($services->mergeRecursive($packages) AS $all)
+            <div class="col-md-2 text-center">
+                <img src="{{ check_file($all->image) }}" height="100px" width="100px" class="rounded-circle">
+            <h5>{{ $all->service_name ?? $all->title }}</h5>
+            <a href="{{ route('fronts.it_solutions') }}" class="btn btn-white">23 listing</a>
+        </div>
+        @endforeach --}}
+    </div>
+    </div>
+</section>
+
+<section class="about-section mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Ali Property Advisors is your international assistant in buying and selling real estate!
+                </h2>
+                <a href="javascript:void(0)" class="btn btn-primary">ABOUT</a>
+            </div>
+
+            <div class="col-md-6">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{--
+<section class="property-sale">
+    <div class="container">
+        <div class="d-flex justify-content-between heading">
+            <div>
+                <h3>Popular properties for sale around the world</h3>
+                <p>Explore some of the most popular properties for sale around the world</p>
+            </div>
+            <div><a href="javascript:void(0)" class="btn btn-primary">VIEW ALL</a></div>
+        </div>
+
+        <div class="properties-slider">
+            @foreach($properties AS $property)
+                <div class="col-md-3 properties">
+                    <a href="javascript:void(0)" class="text-decoration-none">
+                        <div class="badge rent">
+                            Rent
+                        </div>
+                        <img src="{{ check_file($property->image) }}" width="100%">
+                        <h5>{{ number_format($property->price, 2) }}</h5>
+                        <p><img src="{{ asset('front_assets/imgs/MapPinLine.png') }}" class="m-0 me-2 d-inline">{{ $property->address }}</p>
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section> --}}
 
 <!-- <section class="agents-banner mt-5">
     <div class="container">

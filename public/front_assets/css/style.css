@@ -265,7 +265,7 @@ form.search-property div, form.search-agent div{
     text-align: center;
 }
 
-.property-sale{margin-top: 120px;}
+.property-sale{margin-top: 50px;}
 .property-sale .heading{margin-bottom: 40px;}
 .property-sale .heading h3{font-size: 28px;font-weight: 700;}
 .property-sale .heading p{font-size: 16px;font-weight: 500;}
@@ -284,6 +284,7 @@ form.search-property div, form.search-agent div{
     border-radius: 17px;
     margin: 0px 10px;
     padding: 0;
+    height: initial;
 }
 
 .property-sale .properties .properties_content{padding: 10px 15px;}
@@ -437,6 +438,7 @@ form.search-property div, form.search-agent div{
 
 .become-agent {
     margin-top: 80px;
+    padding: 100px 0;
 }
 
 .become-agent h1 {
